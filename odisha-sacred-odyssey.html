@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisha Sacred Odyssey | SuDhama Farms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'odisha-sand': '#f4e4bc',
+                        'odisha-clay': '#c17a5b',
+                        'odisha-stone': '#4a4a4a',
+                        'deep-saffron': '#FF9933',
+                        'temple-red': '#8b0000',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c17a5b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a05a3b;
+        }
+
+        /* Parallax Utilities */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Text Utilities */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Smooth Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loader */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased overflow-x-hidden">
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="text-center">
+            <h1 class="font-display text-4xl text-temple-red animate-pulse">JAI JAGANNATH</h1>
+            <p class="font-serif text-stone-500 mt-2">Loading the Sacred Odyssey...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center text-white mix-blend-difference">
+        <a href="index.html" class="font-display text-2xl tracking-widest hover:opacity-80 transition">SUDHAMA</a>
+        <div class="hidden md:flex space-x-8 font-sans text-sm tracking-wide uppercase">
+            <a href="#prologue" class="hover:text-deep-saffron transition">Origins</a>
+            <a href="#bhubaneswar" class="hover:text-deep-saffron transition">The City</a>
+            <a href="#shakti" class="hover:text-deep-saffron transition">The Shakti</a>
+            <a href="#konark" class="hover:text-deep-saffron transition">The Sun</a>
+            <a href="#puri" class="hover:text-deep-saffron transition">The Lord</a>
+            <a href="#gallery-section" class="hover:text-deep-saffron transition">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+            <p class="font-sans text-lg md:text-xl tracking-[0.2em] mb-4 animate-fade-in opacity-0" style="animation-delay: 0.5s;">DECEMBER 2024</p>
+            <h1 class="font-display text-5xl md:text-8xl font-bold mb-6 text-shadow animate-fade-in opacity-0" style="animation-delay: 0.8s;">ODISHA SACRED ODYSSEY</h1>
+            <div class="w-24 h-1 bg-deep-saffron mx-auto mb-8 animate-fade-in opacity-0" style="animation-delay: 1.2s;"></div>
+            <p class="font-serif text-xl md:text-2xl italic text-gray-200 animate-fade-in opacity-0" style="animation-delay: 1.5s;">"Where the Divine meets the Soul"</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
+
+    <!-- Prologue / Intro -->
+    <section id="prologue" class="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center reveal">
+        <span class="text-temple-red font-display text-lg tracking-widest">THE PRELUDE</span>
+        <h2 class="font-serif text-4xl md:text-5xl my-6 text-stone-800">A Journey Through Time & Spirit</h2>
+        <p class="font-sans text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto">
+            Between December 22nd and 25th, 2024, a planned itinerary evolved into a sacred conversation with history.
+            From the tribal roots of the Iron Age to the futuristic prophecies of the Malika. This is the chronicle of a pilgrimage
+            across the <strong>"Soul of Incredible India"</strong>.
+        </p>
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 font-display text-sm tracking-wider text-stone-500">
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">04</span>
+                DAYS
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">12+</span>
+                TEMPLES
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">500</span>
+                KM TRAVELED
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">∞</span>
+                MEMORIES
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 1: Bhubaneswar -->
+    <section id="bhubaneswar" class="relative">
+        <div class="h-[60vh] parallax-bg flex items-center justify-center p-12" style="background-image: url('https://images.unsplash.com/photo-1627894483216-2138af692e32?q=80&w=1920&auto=format&fit=crop');">
+            <div class="bg-white/90 p-12 max-w-2xl text-center shadow-2xl reveal">
+                <span class="text-deep-saffron font-bold text-sm tracking-widest uppercase mb-2 block">Day 01</span>
+                <h2 class="font-serif text-4xl mb-4">The Temple City</h2>
+                <p class="font-sans text-gray-600">Bhubaneswar: A paradox where smart city grids meet 7th-century sandstone.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto py-24 px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h3 class="font-display text-3xl mb-6 flex items-center"><span class="w-12 h-1 bg-temple-red mr-4"></span>Lingaraj Temple</h3>
+                <p class="text-stone-600 mb-6 leading-relaxed">
+                    Standing 180 feet tall, the <strong>Lingaraj Temple</strong> is a symphony of stone. The deity here is <em>Harihara</em>—a fusion of Vishnu and Shiva, quelling ancient sectarian wars. While non-Hindus cannot enter, the viewing platform offers a breathtaking panorama of the 150 subsidiary shrines.
+                </p>
+                <blockquote class="border-l-4 border-deep-saffron pl-6 italic text-stone-500 my-8">
+                    "The silence here is not empty; it is full of the discipline of thousands of monks who sought to conquer not lands, but the self."
+                </blockquote>
+                <button onclick="openGallery('bhubaneswar')" class="group flex items-center text-temple-red font-bold uppercase tracking-widest hover:opacity-70 transition cursor-pointer">
+                    View Gallery <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-2 gap-4 reveal">
+                <img src="https://images.unsplash.com/photo-1599831168278-e56598c919d3?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg shadow-lg transform translate-y-8" alt="Udayagiri Caves">
+                <img src="https://images.unsplash.com/photo-1620766182578-02435699aa59?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg shadow-lg" alt="Tribal Art">
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 2: The Food -->
+    <section class="bg-odisha-sand/20 py-24 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto text-center reveal">
+            <h2 class="font-serif text-4xl mb-12">The Culinary Odyssey</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🥔</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Dahibara Aloodum</h3>
+                    <p class="text-sm text-stone-600">The legendary street food. Spicy potato curry over vadas soaked in yogurt.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🧀</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Chhena Poda</h3>
+                    <p class="text-sm text-stone-600">"Burnt Cheese" cake. Caramelized crust with a smoky, sweet soul.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="text-5xl mb-4">🍯</div>
+                    <h3 class="font-display text-xl font-bold mb-2">Rasagola</h3>
+                    <p class="text-sm text-stone-600">The original. Melting in the mouth, leaving a trail of pure sweetness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 3: Shakti -->
+    <section id="shakti" class="bg-stone-900 text-stone-100 py-24 px-6 md:px-12 relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-temple-red/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-12 text-center mb-12 reveal">
+                <span class="text-deep-saffron font-bold text-sm tracking-widest uppercase">Day 03</span>
+                <h2 class="font-serif text-5xl mt-2">The Shakti Trail</h2>
+            </div>
+            
+            <div class="md:col-span-5 relative reveal">
+                <div class="relative z-10 p-8 border border-stone-700 bg-stone-800/50 backdrop-blur-sm rounded-lg">
+                    <h3 class="font-display text-2xl text-deep-saffron mb-4">Cuttack Chandi</h3>
+                    <p class="text-stone-300 leading-relaxed mb-6">
+                        The "Living Goddess" of the Silver City. We witnessed the deity adorned in the iconic <strong>Chandi Medha</strong>—a backdrop made purely of silver filigree.
+                    </p>
+                    <h3 class="font-display text-2xl text-deep-saffron mb-4 mt-8">Chhatia Bata</h3>
+                    <p class="text-stone-300 leading-relaxed">
+                        A fortress for the future. Legend says when the Kali Yuga ends, Lord Jagannath will abandon Puri for this very spot. The sword in the Lord's hand is said to be slowly growing...
+                    </p>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 grid grid-cols-2 gap-4 reveal">
+                 <img src="https://images.unsplash.com/photo-1605330889276-80dc48464670?q=80&w=600&auto=format&fit=crop" class="w-full h-80 object-cover rounded-lg shadow-2xl opacity-80 hover:opacity-100 transition" alt="Cuttack vibes">
+                 <div class="flex flex-col gap-4">
+                     <div class="bg-temple-red p-8 rounded-lg flex items-center justify-center text-center">
+                         <p class="font-display text-2xl">"Dharma is not just about prayer; sometimes, it is about the sword."</p>
+                     </div>
+                     <button onclick="openGallery('shakti_trail')" class="h-full bg-stone-800 border border-stone-600 rounded-lg flex items-center justify-center hover:bg-stone-700 transition">
+                        <span class="font-display tracking-widest uppercase">Explore Gallery</span>
+                     </button>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 4: Konark & Puri -->
+    <section id="konark" class="py-24">
+        <!-- Konark -->
+         <div class="max-w-7xl mx-auto px-6 md:px-12 mb-32">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <img src="https://images.unsplash.com/photo-1591807353982-bfa33e83b4c6?q=80&w=1200&auto=format&fit=crop" class="w-full rounded-xl shadow-2xl" alt="Konark Wheel">
+                </div>
+                <div class="order-1 md:order-2 reveal">
+                    <h2 class="font-display text-5xl text-stone-800 mb-6">Konark: The Chariot of Time</h2>
+                    <p class="text-stone-600 text-lg mb-6">
+                        Built in the 13th century, this temple is a colossal chariot for the Sun God. The 24 wheels are not just decoration—they are sophisticated sundials.
+                    </p>
+                    <div class="bg-odisha-sand/30 p-6 rounded-lg border border-odisha-sand mb-8">
+                        <h4 class="font-bold text-odisha-clay mb-2">Engineering Marvel</h4>
+                        <p class="text-sm">Iron beams weighing tons, magnetic lodestones (now lost), and a structure that once guided Portuguese ships. Konark is where science meets faith.</p>
+                    </div>
+                    <button onclick="openGallery('konark')" class="text-odisha-clay font-bold uppercase tracking-widest hover:underline">See the Stone Symphony →</button>
+                </div>
+            </div>
+         </div>
+
+         <!-- Puri -->
+         <div id="puri" class="bg-sky-50 py-24">
+             <div class="max-w-4xl mx-auto text-center px-6 reveal">
+                 <p class="text-temple-red font-bold tracking-widest uppercase mb-4">The Climax</p>
+                 <h2 class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Puri Jagannath Dham</h2>
+                 <p class="text-xl text-stone-600 leading-relaxed mb-12">
+                     The destination of every soul. Where the flag flies against the wind, and the Lord of the Universe waits with open arms.
+                     We stood before the Jewel Throne (*Ratnavedi*), and in the wide eyes of Jagannath, we saw not just a deity, but ourselves.
+                 </p>
+                 <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl relative group cursor-pointer" onclick="openGallery('puri')">
+                     <img src="https://images.unsplash.com/photo-1566804968393-27d9753c2289?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                         <span class="border border-white text-white px-8 py-3 backdrop-blur-sm hover:bg-white hover:text-black transition">ENTER THE SACRED</span>
+                     </div>
+                 </div>
+                 <p class="mt-8 font-display text-3xl text-stone-800">"JAI JAGANNATH"</p>
+             </div>
+         </div>
+    </section>
+
+    <!-- Gallery Section (The Grid) -->
+    <section id="gallery-section" class="py-24 px-6 md:px-12 bg-stone-900 text-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-4xl mb-12 text-center text-deep-saffron">Visual Archives</h2>
+            
+            <!-- Controls -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 active hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="all">All</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="bhubaneswar">Bhubaneswar</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="shakti_trail">Shakti Trail</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="konark">Konark</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="puri">Puri</button>
+            </div>
+
+            <!-- Dynamic Grid -->
+            <div id="main-gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Guide Footer -->
+    <footer class="bg-stone-100 border-t border-stone-200 pt-24 pb-12 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <h4 class="font-display text-xl mb-6">Practical Tips</h4>
+                <ul class="space-y-3 text-stone-600 text-sm">
+                    <li><strong>Best Time:</strong> Nov - Feb</li>
+                    <li><strong>Dress Code:</strong> Modest (Shoulders/Knees covered)</li>
+                    <li><strong>Travel:</strong> BBI Airport / Puri Railway</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-display text-xl mb-6">Must Buy</h4>
+                <ul class="space-y-3 text-stone-600 text-sm">
+                    <li>Sambalpuri Textiles</li>
+                    <li>Silver Filigree (Cuttack)</li>
+                    <li>Pattachitra Paintings</li>
+                    <li>Khaja Sweet (Puri)</li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="font-display text-xl mb-6">Final Reflection</h4>
+                <p class="text-stone-600 italic">
+                    "The Odisha Sacred Odyssey was more than a tour. It was a reminder that we are not human beings having a spiritual experience; we are spiritual beings having a human experience."
+                </p>
+                <div class="mt-8">
+                     <a href="index.html" class="text-temple-red font-bold hover:underline">← Back to SuDhama Farms</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-stone-400 text-xs uppercase tracking-widest border-t border-stone-200 pt-8">
+            &copy; 2024 SuDhama Writings. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[9999] hidden flex justify-center items-center opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-deep-saffron">&times;</button>
+        <button id="lightbox-prev" class="absolute left-4 md:left-10 text-white text-4xl p-4 hover:text-deep-saffron">‹</button>
+        <button id="lightbox-next" class="absolute right-4 md:right-10 text-white text-4xl p-4 hover:text-deep-saffron">›</button>
+        
+        <div class="max-w-5xl max-h-[80vh] p-4 text-center">
+            <img id="lightbox-img" src="" class="max-h-[70vh] max-w-full mx-auto shadow-2xl rounded-sm">
+            <h3 id="lightbox-caption" class="text-white font-display text-xl mt-6 tracking-wide"></h3>
+        </div>
+    </div>
+
+
+    <script>
+        // --- 1. CONFIGURATION: GALLERY ASSETS ---
+        // To add images, simply drop files into images/travel/[category]/ and add the filename here.
+        const galleryConfig = {
+            'bhubaneswar': [
+                { src: 'https://images.unsplash.com/photo-1627894483216-2138af692e32?q=80&w=800', caption: 'Lingaraj Temple Spire' },
+                { src: 'https://images.unsplash.com/photo-1599831168278-e56598c919d3?q=80&w=800', caption: 'Udayagiri Monk Caves' },
+                { src: 'https://images.unsplash.com/photo-1620766182578-02435699aa59?q=80&w=800', caption: 'Tribal Art Details' }
+            ],
+            'shakti_trail': [
+                { src: 'https://images.unsplash.com/photo-1605330889276-80dc48464670?q=80&w=800', caption: 'Streets of Cuttack' },
+                { src: 'https://images.unsplash.com/photo-1621832174306-6953dc31215b?q=80&w=800', caption: 'Temple Bells' } // Placeholder for Goddess
+            ],
+            'konark': [
+                { src: 'https://images.unsplash.com/photo-1591807353982-bfa33e83b4c6?q=80&w=800', caption: 'The Wheel of Time' },
+                { src: 'https://images.unsplash.com/photo-1621257406323-288219662b66?q=80&w=800', caption: 'Stone Horses' },
+                { src: 'https://images.unsplash.com/photo-1626101683262-654876b50e30?q=80&w=800', caption: 'Architectural Detail' }
+            ],
+            'puri': [
+                { src: 'https://images.unsplash.com/photo-1566804968393-27d9753c2289?q=80&w=800', caption: 'The Grand Road (Bada Danda)' },
+                { src: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=800', caption: 'Pilgrimage' }
+            ]
+        };
+
+        // --- 2. LOGIC ---
+        
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.remove(), 500);
+            }, 1000);
+        });
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const parallaxEls = document.querySelectorAll('.parallax-bg');
+            parallaxEls.forEach(el => {
+                let scrollPosition = window.pageYOffset;
+                // el.style.backgroundPositionY = (scrollPosition * 0.5) + 'px'; // Simple CSS parallax is usually smoother than JS
+            });
+            
+            // Navbar Glass
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 50) {
+                nav.classList.add('bg-black/80', 'backdrop-blur-md', 'py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('bg-black/80', 'backdrop-blur-md', 'py-2');
+                nav.classList.add('py-4');
+            }
+        });
+
+        // Gallery System
+        const grid = document.getElementById('main-gallery-grid');
+        let currentLightboxImages = [];
+        let currentLightboxIndex = 0;
+
+        function renderGallery(filter = 'all') {
+            grid.innerHTML = '';
+            let allImages = [];
+            
+            // Flatten images based on filter
+            if (filter === 'all') {
+                Object.values(galleryConfig).forEach(arr => allImages.push(...arr));
+            } else if (galleryConfig[filter]) {
+                allImages = galleryConfig[filter];
+            }
+
+            allImages.forEach((img, index) => {
+                const div = document.createElement('div');
+                div.className = 'relative aspect-square overflow-hidden rounded-lg cursor-pointer group';
+                div.innerHTML = `
+                    <img src="${img.src}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-center justify-center">
+                        <span class="text-white opacity-0 group-hover:opacity-100 font-display tracking-widest text-sm">${img.caption}</span>
+                    </div>
+                `;
+                div.onclick = () => openLightbox(allImages, index);
+                grid.appendChild(div);
+            });
+        }
+
+        // Init Gallery
+        renderGallery();
+
+        // Filter Buttons
+        document.querySelectorAll('.gallery-filter').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.gallery-filter').forEach(b => {
+                    b.classList.remove('bg-deep-saffron', 'border-deep-saffron');
+                    b.classList.add('border-stone-600');
+                });
+                e.target.classList.remove('border-stone-600');
+                e.target.classList.add('bg-deep-saffron', 'border-deep-saffron');
+                renderGallery(e.target.dataset.filter);
+            });
+        });
+
+        // Specific Section Buttons
+        window.openGallery = function(category) {
+            // Scroll to gallery
+            document.getElementById('gallery-section').scrollIntoView({ behavior: 'smooth' });
+            // Click the filter button
+            const btn = document.querySelector(`.gallery-filter[data-filter="${category}"]`);
+            if(btn) btn.click();
+        };
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbCap = document.getElementById('lightbox-caption');
+
+        function openLightbox(images, index) {
+            currentLightboxImages = images;
+            currentLightboxIndex = index;
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightbox() {
+            const img = currentLightboxImages[currentLightboxIndex];
+            lbImg.src = img.src;
+            lbCap.textContent = img.caption;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => lightbox.classList.add('hidden'), 300);
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightbox-close').onclick = closeLightbox;
+        document.getElementById('lightbox-next').onclick = (e) => {
+            e.stopPropagation();
+            currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+            updateLightbox();
+        };
+        document.getElementById('lightbox-prev').onclick = (e) => {
+            e.stopPropagation();
+            currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+            updateLightbox();
+        };
+        
+        // Close on background click
+        lightbox.onclick = (e) => {
+            if(e.target === lightbox) closeLightbox();
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jai Jagannath: A Pilgrim's Journey Through Odisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Cinzel:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-orange': '#FF5722',
+              'brand-blue': '#2196F3',
+              'brand-green': '#4CAF50',
+            },
+            fontFamily: {
+              'heading': ['Merriweather', 'serif'],
+              'body': ['Roboto', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 1s ease-out',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased overflow-x-hidden">
+    <div id="progress-bar" class="fixed top-0 left-0 z-[100] h-1 bg-deep-saffron" style="width: 0%"></div>
+    <div id="loader">
+        <div class="text-center">
+            <h1 class="font-display text-4xl text-temple-red animate-pulse">JAI JAGANNATH</h1>
+            <p class="font-serif text-stone-500 mt-2">Loading the Sacred Odyssey...</p>
+        </div>
+    </div>
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center text-white mix-blend-difference" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="font-display text-2xl tracking-widest hover:opacity-80 transition">JAI JAGANNATH</a>
+        <div class="hidden md:flex space-x-8 font-sans text-sm tracking-wide uppercase">
+            <a href="#prologue" class="hover:text-deep-saffron transition">The Journey</a>
+            <a href="#bhubaneswar" class="hover:text-deep-saffron transition">The Temple City</a>
+            <a href="#shakti" class="hover:text-deep-saffron transition">The Shakti Trail</a>
+            <a href="#konark" class="hover:text-deep-saffron transition">The Sun Chariot</a>
+            <a href="#puri" class="hover:text-deep-saffron transition">The Lord's Abode</a>
+            <a href="#gallery-section" class="hover:text-deep-saffron transition">Gallery</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-white z-50" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+            <svg id="menu-open-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg id="menu-close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-screen bg-stone-900/95 backdrop-blur-sm flex flex-col items-center justify-center space-y-8 text-2xl font-display text-white" role="dialog" aria-modal="true" aria-hidden="true">
+        <a href="#prologue" class="mobile-nav-link">The Journey</a>
+        <a href="#bhubaneswar" class="mobile-nav-link">The Temple City</a>
+        <a href="#shakti" class="mobile-nav-link">The Shakti Trail</a>
+        <a href="#konark" class="mobile-nav-link">The Sun Chariot</a>
+        <a href="#puri" class="mobile-nav-link">The Lord's Abode</a>
+        <a href="#gallery-section" class="mobile-nav-link">Gallery</a>
+    </div>
+
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=2000&auto=format&fit=crop');" role="banner">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+            <p class="font-sans text-lg md:text-xl tracking-[0.2em] mb-4 animate-fade-in opacity-0" style="animation-delay: 0.5s;">A PILGRIM'S JOURNEY: DECEMBER 2024</p>
+            <h1 class="font-display text-5xl md:text-8xl font-bold mb-6 text-shadow animate-fade-in opacity-0" style="animation-delay: 0.8s;">JAI JAGANNATH</h1>
+            <div class="w-24 h-1 bg-deep-saffron mx-auto mb-8 animate-fade-in opacity-0" style="animation-delay: 1.2s;"></div>
+            <p class="font-serif text-xl md:text-2xl italic text-gray-200 animate-fade-in opacity-0" style="animation-delay: 1.5s;">We had thought we were going on a pilgrimage to see God. But God had invited us.</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </header>
+<main>
+    <section id="prologue" class="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center reveal">
+        <span class="text-temple-red font-display text-lg tracking-widest">THE PRELUDE</span>
+        <h2 class="font-serif text-4xl md:text-5xl my-6 text-stone-800">A Journey Through Time & Spirit</h2>
+        <p class="font-sans text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto">
+            Between December 22nd and 25th, 2024, a planned itinerary evolved into a sacred odyssey. It became a conversation with the divine, choreographed by a force far greater than our own. This is the chronicle of a pilgrimage across the <strong>"Soul of Incredible India"</strong>, where every coincidence was an appointment and every challenge a lesson.
+        </p>
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 font-display text-sm tracking-wider text-stone-500">
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">04</span>DAYS
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">12+</span>TEMPLES
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">500</span>KM TRAVELED
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl text-temple-red mb-2">∞</span>MEMORIES
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section id="timeline" class="py-24 px-6 md:px-12 bg-stone-100" aria-labelledby="timeline-heading">
+        <div class="max-w-7xl mx-auto text-center reveal">
+            <h2 id="timeline-heading" class="font-serif text-4xl md:text-5xl my-6 text-stone-800">The Pilgrim's Path</h2>
+            <p class="font-sans text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto mb-16">
+                Follow the four-day journey as it unfolded, a pilgrimage dense with divine encounters and profound revelations.
+            </p>
+            <div class="relative wrap overflow-hidden h-full">
+                <div class="border-2-2 absolute border-opacity-20 border-stone-700 h-full border" style="left: 50%" aria-hidden="true"></div>
+                <!-- Day 1 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-stone-800 shadow-xl w-8 h-8 rounded-full">
+                        <span class="mx-auto font-semibold text-sm text-white" aria-hidden="true">1</span>
+                    </div>
+                    <div class="order-1 bg-stone-200 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-stone-800 text-xl">Day 1: Arrival in Bhubaneswar</h3>
+                        <p class="text-sm leading-snug tracking-wide text-stone-900 text-opacity-100">The journey begins. Arrival in the Temple City, visit to Lingaraj Temple, and the serendipitous darshan at Udayagiri.</p>
+                    </div>
+                </div>
+                <!-- Day 2 -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-stone-800 shadow-xl w-8 h-8 rounded-full">
+                        <span class="mx-auto text-white text-sm font-semibold" aria-hidden="true">2</span>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-stone-800 text-xl">Day 2: The Shakti Trail</h3>
+                        <p class="text-sm leading-snug tracking-wide text-stone-900 text-opacity-100">Journey to Cuttack and Jajpur. Darshan at Chandi Temple, Netaji's birthplace, and the perfectly timed visit to Maa Biraja Temple.</p>
+                    </div>
+                </div>
+                <!-- Day 3 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-stone-800 shadow-xl w-8 h-8 rounded-full">
+                        <span class="mx-auto font-semibold text-sm text-white" aria-hidden="true">3</span>
+                    </div>
+                    <div class="order-1 bg-stone-200 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-stone-800 text-xl">Day 3: The Battlefield Within</h3>
+                        <p class="text-sm leading-snug tracking-wide text-stone-900 text-opacity-100">The profound philosophical revelations at Chhatia Bata, where the battle of the Kali Yuga is revealed to be within the self.</p>
+                    </div>
+                </div>
+                <!-- Day 4 -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-stone-800 shadow-xl w-8 h-8 rounded-full">
+                        <span class="mx-auto text-white text-sm font-semibold" aria-hidden="true">4</span>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-stone-800 text-xl">Day 4: Konark & Puri</h3>
+                        <p class="text-sm leading-snug tracking-wide text-stone-900 text-opacity-100">The final arc. Witnessing the Sun Chariot at Konark and the climactic, divinely orchestrated darshan of Lord Jagannath in Puri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section id="map" class="py-24 px-6 md:px-12" aria-labelledby="map-heading">
+        <div class="max-w-7xl mx-auto text-center reveal">
+            <h2 id="map-heading" class="font-serif text-4xl md:text-5xl my-6 text-stone-800">The Sacred Geography</h2>
+            <p class="font-sans text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto mb-16">
+                Explore the key locations of the pilgrimage on this interactive map.
+            </p>
+            <div id="leaflet-map" class="h-96 w-full rounded-lg shadow-xl" role="application"></div>
+        </div>
+    </section>
+
+    <section id="bhubaneswar" class="relative" aria-labelledby="bhubaneswar-heading">
+        <div class="h-[60vh] parallax-bg flex items-center justify-center p-12" style="background-image: url('https://images.unsplash.com/photo-1627894483216-2138af692e32?q=80&amp;w=1920&amp;auto=format&amp;fit=crop');">
+            <div class="bg-white/90 p-12 max-w-2xl text-center shadow-2xl reveal">
+                <span class="text-deep-saffron font-bold text-sm tracking-widest uppercase mb-2 block">Day 01 & 02</span>
+                <h2 id="bhubaneswar-heading" class="font-serif text-4xl mb-4">Bhubaneswar: The Temple City</h2>
+                <p class="font-sans text-gray-600">Our journey began in the ancient city of over 500 temples, where every stone tells a story of devotion.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto py-24 px-6 md:px-12 space-y-24">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h3 class="font-display text-3xl mb-6 flex items-center"><span class="w-12 h-1 bg-temple-red mr-4"></span>Lingaraj Temple: The Sovereign</h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed">
+                        The 180-foot spire of Lingaraj dominates the skyline, a testament to 11th-century devotion. The presiding deity is Harihara, a fusion of Shiva and Vishnu, a symbol of divine unity. Local tradition holds that the temple's curved spire was formed from a fragment of Lord Shiva's divine bow, the Pinaka, which shattered when Lord Rama strung it to win Sita's hand. The architecture itself becomes scripture.
+                    </p>
+                    <blockquote class="border-l-4 border-deep-saffron pl-6 italic text-stone-500 my-8">
+                        "This was not merely a temple visit but an audience with the divine sovereign himself."
+                    </blockquote>
+                </div>
+                <div class="grid grid-cols-2 gap-4 reveal">
+                    <img src="https://images.unsplash.com/photo-1599831168278-e56598c919d3?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg shadow-lg transform translate-y-8" alt="Ancient stone carvings inside the Udayagiri Caves">
+                    <img src="https://images.unsplash.com/photo-1620766182578-02435699aa59?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover rounded-lg shadow-lg" alt="Colorful tribal art painted on a wall">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                 <div class="order-2 md:order-1 grid grid-cols-2 gap-4 reveal">
+                    <img src="https://images.unsplash.com/photo-1542640244-b28a27453677?q=80&w=600&auto=format&fit=crop" class="w-full h-80 object-cover rounded-lg shadow-lg" alt="The white marble Jain Temple on Khandagiri hill at sunset">
+                </div>
+                <div class="order-1 md:order-2 reveal">
+                    <h3 class="font-display text-3xl mb-6 flex items-center"><span class="w-12 h-1 bg-temple-red mr-4"></span>Khandagiri & Udayagiri: A Lesson in Grace</h3>
+                    <p class="text-stone-600 mb-6 leading-relaxed">
+                        These twin hills, honeycombed with caves carved by Jain monks, taught us our first lesson in divine choreography. Arriving after the Jain temple gates had closed, a moment of desperation and a kind guard led to an unforgettable darshan. We watched the sunset pour like liquid gold through the white marble temple, a moment we almost missed, but grace intervened.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center reveal">
+                 <h3 class="font-display text-3xl mb-6">Evening Serendipities & The Odyssey of Taste</h3>
+                 <p class="max-w-3xl mx-auto text-stone-600 leading-relaxed">
+                    The evening unfolded with unexpected gifts: a satsang at a beautiful Ram Mandir, and a culinary journey through the streets. We discovered Odisha's legendary <strong>Chhena Poda</strong> and a papdi chaat so complex it was a work of art, constructed with thirty ingredients over twenty minutes. It was, quite simply, the bomb.
+                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="shakti" class="bg-stone-900 text-stone-100 py-24 px-6 md:px-12 relative overflow-hidden" aria-labelledby="shakti-heading">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-temple-red/10 rounded-full blur-3xl" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-deep-saffron font-bold text-sm tracking-widest uppercase">Day 03</span>
+                <h2 id="shakti-heading" class="font-serif text-5xl mt-2">The Shakti Trail & The Battlefield Within</h2>
+                <p class="max-w-3xl mx-auto text-stone-400 mt-4">A journey into the heart of the Divine Mother and the birthplace of a revolutionary.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                <div class="reveal">
+                    <h3 class="font-display text-3xl text-deep-saffron mb-4">Cuttack Chandi & Maa Biraja</h3>
+                    <p class="text-stone-300 leading-relaxed mb-6">
+                        We stood before two of the 51 Shakti Peethas, where parts of Goddess Sati's body fell. At Cuttack Chandi, her left shoulder; at Maa Biraja, her navel. A frantic race against time saw us arrive at Maa Biraja at 12:58 PM, just two minutes before the doors closed for the afternoon. It was our first major "coincidence."
+                    </p>
+                     <h3 class="font-display text-3xl text-deep-saffron mb-4 mt-8">Netaji's Birthplace</h3>
+                    <p class="text-stone-300 leading-relaxed">
+                        In Cuttack, we walked the rooms where Subhash Chandra Bose was born. A pilgrimage not to an ancient temple, but to the cradle of a revolutionary who fought to free the land so we could walk it freely.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <img src="https://images.unsplash.com/photo-1605330889276-80dc48464670?q=80&w=800&auto=format&fit=crop" class="w-full h-96 object-cover rounded-lg shadow-2xl opacity-80 hover:opacity-100 transition" alt="A vibrant street scene in Cuttack at dusk">
+                </div>
+            </div>
+
+            <div class="text-center reveal">
+                 <h2 class="font-serif text-4xl mb-6">Chattia Bata: The Mirror of the Soul</h2>
+                 <p class="max-w-4xl mx-auto text-stone-300 leading-relaxed">
+                    Here, we met the seventh descendant of the saint Sri Hadidas, who unlocked the temple's profound philosophy. We learned that the war of Kali Yuga is not fought between armies, but within the human mind. The idol of Lord Kalki faces a mirror, so that when we approach, He is already looking back at us, at the tyrant within. We had come looking for idols, but left carrying a mirror.
+                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="konark" class="py-24" aria-labelledby="konark-heading">
+         <div class="max-w-7xl mx-auto px-6 md:px-12 mb-24">
+            <div class="text-center mb-16 reveal">
+                <span class="text-deep-saffron font-bold text-sm tracking-widest uppercase">Day 04</span>
+                <h2 id="konark-heading" class="font-serif text-5xl mt-2">The Final Arc</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <img src="https://images.unsplash.com/photo-1591807353982-bfa33e83b4c6?q=80&w=1200&auto=format&fit=crop" class="w-full rounded-xl shadow-2xl" alt="Close-up of the intricately carved stone wheel of the Konark Sun Temple">
+                </div>
+                <div class="order-1 md:order-2 reveal">
+                    <h3 class="font-display text-5xl text-stone-800 mb-6">Konark: The Chariot of Time</h3>
+                    <p class="text-stone-600 text-lg mb-6">
+                        This 13th-century marvel is not just a temple but a cosmic diagram in stone. Designed as a colossal chariot for the Sun God, its 24 wheels are functional sundials, a testament to an age where science and faith were one. The temple stands as a celebration of life, its every surface carved with divine and earthly figures.
+                    </p>
+                    <div class="bg-odisha-sand/30 p-6 rounded-lg border border-odisha-sand mb-8">
+                        <h4 class="font-bold text-odisha-clay mb-2">The Legend of Dharmapada</h4>
+                        <p class="text-sm">When 1200 artisans failed to place the final stone, the 12-year-old son of the chief architect completed the task, then sacrificed his life to save the honor of his guild. Konark is a story of both genius and sacrifice.</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <section id="puri" class="bg-sky-50 py-24" aria-labelledby="puri-heading">
+         <div class="max-w-4xl mx-auto text-center px-6 reveal">
+             <p class="text-temple-red font-bold tracking-widest uppercase mb-4">The Climax</p>
+             <h2 id="puri-heading" class="font-serif text-5xl md:text-6xl text-stone-900 mb-8">Puri Jagannath: The Lord Who Called Us</h2>
+             <p class="text-xl text-stone-600 leading-relaxed mb-12">
+                 A chance meeting, a pandit's number, a race through ancient gullies—a series of "coincidences" led us to an impossible darshan. For five minutes, in the heart of a rushing sea of devotees, we stood in a pocket of stillness, gazing upon the Lord of the Universe. He had arranged every step. We received the Maha Prasad, food that erases all caste, and understood the journey's truth.
+             </p>
+             <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl relative group cursor-pointer" onclick="openGallery('puri')">
+                 <img src="https://images.unsplash.com/photo-1566804968393-27d9753c2289?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="The grand facade of the Puri Jagannath Temple with crowds of pilgrims">
+                 <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                     <span class="border border-white text-white px-8 py-3 backdrop-blur-sm hover:bg-white hover:text-black transition">ENTER THE SACRED</span>
+                 </div>
+             </div>
+             <p class="mt-8 font-display text-3xl text-stone-800">"JAI JAGANNATH"</p>
+         </div>
+    </section>
+
+    <section id="gallery-section" class="py-24 px-6 md:px-12 bg-stone-900 text-white" aria-labelledby="gallery-heading">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="gallery-heading" class="font-display text-4xl mb-12 text-center text-deep-saffron">Visual Archives</h2>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12" role="group" aria-label="Gallery filters">
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 active hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="all">All</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="bhubaneswar">Bhubaneswar</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="shakti">Shakti Trail</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="konark">Konark</button>
+                <button class="gallery-filter px-6 py-2 rounded-full border border-stone-600 hover:bg-deep-saffron hover:border-deep-saffron transition" data-filter="puri">Puri</button>
+            </div>
+
+            <div id="main-gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+    </section>
+
+    <section class="animated-gradient py-24 px-6 md:px-12 text-white text-center reveal">
+        <h2 class="font-display text-4xl mb-4">Ready to Start Your Own Journey?</h2>
+        <p class="max-w-2xl mx-auto mb-8">
+            The world is full of sacred places and untold stories. We hope this odyssey inspires you to find yours.
+        </p>
+        <a href="#home" class="bg-white text-stone-800 font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition">Back to Top</a>
+    </section>
+</main>
+    <footer class="bg-stone-100 border-t border-stone-200 pt-24 pb-12 px-6 md:px-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+                <h3 class="font-display text-xl mb-6">Further Reading & FAQ</h3>
+                <div class="space-y-4">
+                    <div class="border rounded-lg">
+                        <button class="w-full text-left p-4 font-semibold flex justify-between items-center accordion-toggle" aria-expanded="false" aria-controls="faq-1">
+                            <span>What is the significance of the Maha Prasad at Puri?</span>
+                            <svg class="w-5 h-5 transform transition-transform" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                        </button>
+                        <div id="faq-1" class="p-4 bg-white text-sm text-stone-600 hidden accordion-content" role="region">
+                            The Maha Prasad is the consecrated food offered to Lord Jagannath. It is considered immensely sacred, and it's said that consuming it absolves one of all sins. Uniquely, it's cooked in earthen pots using a traditional steam-based system and is available to all, regardless of caste or creed, symbolizing unity and equality.
+                        </div>
+                    </div>
+                    <div class="border rounded-lg">
+                        <button class="w-full text-left p-4 font-semibold flex justify-between items-center accordion-toggle" aria-expanded="false" aria-controls="faq-2">
+                            <span>Are there any restrictions for entering the temples?</span>
+                            <svg class="w-5 h-5 transform transition-transform" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                        </button>
+                        <div id="faq-2" class="p-4 bg-white text-sm text-stone-600 hidden accordion-content" role="region">
+                            Yes, many temples in Odisha, including the main sanctums of Lingaraj and Puri Jagannath, are open only to Hindus. A modest dress code (covering shoulders and knees) is highly recommended for all temple visits as a sign of respect. Photography is often prohibited inside the main temple areas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-1">
+                <h3 class="font-display text-xl mb-6">Final Reflection</h3>
+                <p class="text-stone-600 italic">
+                    "We had been witnessed by the Divine, and in that witnessing, we had been changed. The pilgrimage was over. The transformation had just begun."
+                </p>
+            </div>
+        </div>
+        <div class="text-center text-stone-400 text-xs uppercase tracking-widest border-t border-stone-200 pt-8">
+            &copy; 2024 SuDhama Writings. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[9999] hidden flex justify-center items-center opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-hidden="true">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-deep-saffron" aria-label="Close image viewer">&times;</button>
+        <button id="lightbox-prev" class="absolute left-4 md:left-10 text-white text-4xl p-4 hover:text-deep-saffron" aria-label="Previous image">‹</button>
+        <button id="lightbox-next" class="absolute right-4 md:right-10 text-white text-4xl p-4 hover:text-deep-saffron" aria-label="Next image">›</button>
+
+        <div class="max-w-5xl max-h-[80vh] p-4 text-center">
+            <img id="lightbox-img" src="" class="max-h-[70vh] max-w-full mx-auto shadow-2xl rounded-sm" alt="Enlarged gallery image">
+            <h3 id="lightbox-caption" class="text-white font-display text-xl mt-6 tracking-wide"></h3>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
