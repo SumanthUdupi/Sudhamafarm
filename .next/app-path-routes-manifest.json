@@ -1,0 +1,9 @@
+{
+  "/api/schedule/route": "/api/schedule",
+  "/_not-found/page": "/_not-found",
+  "/api/articles/route": "/api/articles",
+  "/page": "/",
+  "/blog/page": "/blog",
+  "/command/page": "/command",
+  "/blog/[slug]/page": "/blog/[slug]"
+}

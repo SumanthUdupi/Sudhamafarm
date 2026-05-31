@@ -5,8 +5,9 @@ import { inferTheme } from '@/lib/themeInferenceEngine'
 import CinematicContentShell from '@/components/ui/CinematicContentShell'
 import ArticleBody from '@/components/blog/ArticleBody'
 
+// Next.js 15: params is a Promise
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -14,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const article = getArticleBySlug(params.slug)
+  const { slug } = await params
+  const article = getArticleBySlug(slug)
   if (!article) return {}
   return {
     title: article.title,
@@ -27,8 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function ArticlePage({ params }: Props) {
-  const article = getArticleBySlug(params.slug)
+export default async function ArticlePage({ params }: Props) {
+  const { slug } = await params
+  const article = getArticleBySlug(slug)
   if (!article) notFound()
 
   const theme = inferTheme(article.content, article.category)
