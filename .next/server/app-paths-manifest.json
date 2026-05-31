@@ -1,9 +1,9 @@
 {
-  "/api/schedule/route": "app/api/schedule/route.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/schedule/route": "app/api/schedule/route.js",
   "/api/articles/route": "app/api/articles/route.js",
-  "/page": "app/page.js",
   "/blog/page": "app/blog/page.js",
+  "/page": "app/page.js",
   "/command/page": "app/command/page.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js"
 }
