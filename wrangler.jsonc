@@ -12,5 +12,9 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "routes": [
+    { "pattern": "sudhamafarm.com/*", "zone_name": "sudhamafarm.com" },
+    { "pattern": "www.sudhamafarm.com/*", "zone_name": "sudhamafarm.com" }
+  ]
 }
