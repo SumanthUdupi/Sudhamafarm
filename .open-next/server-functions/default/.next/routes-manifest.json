@@ -52,6 +52,12 @@
       "regex": "^/command(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/command(?:/)?$"
+    },
+    {
+      "page": "/invite",
+      "regex": "^/invite(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/invite(?:/)?$"
     }
   ],
   "dataRoutes": [],

@@ -1,9 +1,10 @@
 {
   "/_not-found/page": "/_not-found",
   "/api/schedule/route": "/api/schedule",
+  "/invite/route": "/invite",
   "/api/articles/route": "/api/articles",
   "/page": "/",
   "/blog/[slug]/page": "/blog/[slug]",
-  "/command/page": "/command",
-  "/blog/page": "/blog"
+  "/blog/page": "/blog",
+  "/command/page": "/command"
 }

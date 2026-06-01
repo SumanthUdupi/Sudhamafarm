@@ -2,10 +2,10 @@
   if (!a[d]) {
     switch (d) {
        case 18: b(require("./chunks/18.js")); break;
-       case 331: b(require("./chunks/331.js")); break;
        case 334: b(require("./chunks/334.js")); break;
        case 611: b(require("./chunks/611.js")); break;
        case 692: b(require("./chunks/692.js")); break;
+       case 873: b(require("./chunks/873.js")); break;
        case 968: b(require("./chunks/968.js")); break;
        case 311: a[d] = 1; break;
        default: throw new Error(`Unknown chunk ${d}`);
