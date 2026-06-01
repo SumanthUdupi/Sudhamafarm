@@ -4,6 +4,7 @@
   "/api/articles/route": "app/api/articles/route.js",
   "/page": "app/page.js",
   "/command/page": "app/command/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
   "/blog/page": "app/blog/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js"
+  "/invite/route": "app/invite/route.js"
 }

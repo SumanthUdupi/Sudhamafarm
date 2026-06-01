@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#3A000D"/>
+<meta name="description" content="ಚಿ|| ಸುಮಂತ್ ಉಡುಪಿ &amp; ಚಿ|| ಸೌ|| ವಿಂಧ್ಯ ಉಡುಪ — Engagement · 12 July 2026 · Nagoor, Udupi"/>
+<meta property="og:title" content="ಚಿ|| Sumanth &amp; ಚಿ|| ಸೌ|| Vindhya — Engagement 12 July 2026"/>
+<meta property="og:description" content="Ring Exchange Ceremony · Nagoor, Udupi"/>
+<title>ಚಿ|| Sumanth &amp; ಚಿ|| ಸೌ|| Vindhya — Engagement · 12 July 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Kannada:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --paper:      #FDFBF7;
+  --paper-warm: #F4E7C7;
+  --paper-sand: #EDD9A3;
+  --burg:       #722F37;
+  --burg-dk:    #4A1A20;
+  --burg-dp:    #2C0D12;
+  --gold:       #EAA221;
+  --gold-lt:    #F5C84A;
+  --brass:      #D4AF37;
+  --brass-dk:   #B8943A;
+  --ink:        #2C1810;
+  --ink-md:     #5C3A1E;
+  --ink-lt:     #8B6347;
+  --rule:       rgba(212,175,55,.45);
+
+  --ff-title: 'Cinzel', 'Georgia', serif;
+  --ff-serif: 'Playfair Display', 'Georgia', serif;
+  --ff-kn:    'Noto Sans Kannada', 'Nirmala UI', 'Segoe UI', sans-serif;
+  --ff-sans:  'Lato', 'Arial', sans-serif;
+
+  --flip-ease: cubic-bezier(0.77, 0, 0.175, 1);
+  --flip-dur:  560ms;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--burg-dp);
+  font-family: var(--ff-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.4rem, 1.2vh, .9rem);
+  background:
+    radial-gradient(ellipse at 22% 28%, rgba(114,47,55,.6) 0%, transparent 52%),
+    radial-gradient(ellipse at 78% 72%, rgba(44,13,18,.8) 0%, transparent 52%),
+    #200810;
+  overflow: hidden;
+}
+
+.mote {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: moteFloat var(--d, 14s) var(--dl, 0s) ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes moteFloat {
+  0%   { opacity: 0; transform: translateY(0) scale(.7); }
+  15%  { opacity: var(--op, .04); }
+  85%  { opacity: var(--op, .04); }
+  100% { opacity: 0; transform: translateY(-48px) scale(1); }
+}
+
+#book {
+  position: relative;
+  width: min(96vw, 480px);
+  height: calc(100dvh - clamp(3.8rem, 8vh, 5.5rem));
+  max-height: 720px;
+  background: var(--paper);
+  border-radius: 3px 12px 12px 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow:
+    -4px 0 0 #7C5038,
+    -8px 0 0 #4A2A18,
+    0 2px 8px rgba(0,0,0,.25),
+    3px 6px 40px rgba(0,0,0,.65),
+    10px 18px 72px rgba(0,0,0,.45);
+}
+
+#book::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  z-index: 40;
+  background: linear-gradient(90deg, var(--burg-dp) 0%, var(--burg-dk) 55%, #7C5038 100%);
+  pointer-events: none;
+}
+
+#book::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 39;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='.042'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(1.1rem, 3.8vw, 2rem) clamp(1.2rem, 4.2vw, 2.2rem);
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(65px, 0, 0);
+  transition: opacity var(--flip-dur) var(--flip-ease), transform var(--flip-dur) var(--flip-ease);
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: 1;
+}
+
+.page.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: all;
+  z-index: 2;
+}
+
+.page.exit-back {
+  opacity: 0;
+  transform: translate3d(-65px, 0, 0);
+}
+
+.p-cover   { background: var(--paper); }
+.p-welcome { background: var(--paper-warm); justify-content: flex-start; padding-top: clamp(1.5rem, 5vh, 2.8rem); }
+.p-divine  { background: var(--paper-warm); justify-content: flex-start; padding-top: clamp(1.2rem, 4vh, 2.2rem); }
+.p-muhu    { background: var(--paper-warm); }
+.p-venue   { background: var(--paper); justify-content: flex-start; padding-top: clamp(1.2rem, 3.8vh, 2rem); padding-bottom: clamp(1rem, 2.5vh, 1.6rem); }
+
+.p-inset {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(114,47,55,.18);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cg {
+  position: absolute;
+  font-size: clamp(.5rem, 1.2vw, .62rem);
+  color: var(--burg);
+  opacity: .35;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 6;
+}
+.cg.tl { top: 17px; left: 18px; }
+.cg.tr { top: 17px; right: 18px; }
+.cg.bl { bottom: 17px; left: 18px; }
+.cg.br { bottom: 17px; right: 18px; }
+
+.h-rule {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  width: 100%;
+  max-width: 300px;
+  margin: clamp(.5rem, 1.5vh, .9rem) auto;
+}
+
+.h-rule::before, .h-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass), transparent);
+}
+
+.h-rule-gem {
+  color: var(--brass);
+  font-size: .68rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.lbl {
+  font-family: var(--ff-sans);
+  font-size: clamp(.48rem, 1.2vw, .58rem);
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: clamp(.3rem, .8vh, .5rem);
+}
+
+.wm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(64%, 268px);
+  color: var(--burg);
+  opacity: .055;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cover-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cover-om {
+  font-family: var(--ff-kn);
+  font-size: clamp(.68rem, 1.7vw, .85rem);
+  color: var(--ink-lt);
+  letter-spacing: .18em;
+  margin-bottom: clamp(.5rem, 1.5vh, .9rem);
+}
+
+.cover-prefix {
+  font-family: var(--ff-kn);
+  font-size: clamp(.62rem, 1.5vw, .78rem);
+  color: var(--brass-dk);
+  letter-spacing: .06em;
+  line-height: 1.6;
+  margin-bottom: .12rem;
+}
+
+.cover-name-en {
+  font-family: var(--ff-title);
+  font-weight: 700;
+  font-size: clamp(1.55rem, 5.8vw, 2.8rem);
+  color: var(--burg);
+  letter-spacing: .07em;
+  line-height: 1.08;
+  text-shadow: 1px 2px 0 rgba(212,175,55,.28);
+}
+
+.cover-name-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.72rem, 1.9vw, .9rem);
+  color: var(--brass-dk);
+  letter-spacing: .04em;
+  margin-top: .1rem;
+}
+
+.cover-amp {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2.8vw, 1.7rem);
+  color: var(--brass);
+  margin: clamp(.3rem, 1vh, .55rem) 0;
+  letter-spacing: .04em;
+}
+
+.cover-sub {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(.65rem, 1.6vw, .82rem);
+  color: var(--ink-lt);
+  letter-spacing: .14em;
+  margin-top: clamp(.6rem, 1.8vh, 1rem);
+}
+
+.cover-badge {
+  margin-top: clamp(.7rem, 2vh, 1.2rem);
+  padding: clamp(.42rem, 1.2vh, .58rem) clamp(1.2rem, 4vw, 1.8rem);
+  border: 1px solid var(--brass);
+  border-radius: 40px;
+  font-family: var(--ff-title);
+  font-size: clamp(.52rem, 1.3vw, .68rem);
+  letter-spacing: .2em;
+  color: var(--burg-dk);
+  background: rgba(212,175,55,.1);
+}
+
+.cover-badge sup {
+  font-size: .68em;
+  vertical-align: super;
+}
+
+.open-btn {
+  margin-top: clamp(.9rem, 2.5vh, 1.5rem);
+  font-family: var(--ff-title);
+  font-size: clamp(.52rem, 1.3vw, .66rem);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--burg);
+  background: transparent;
+  border: 1px solid var(--burg);
+  padding: clamp(.5rem, 1.5vh, .72rem) clamp(1.4rem, 4vw, 2rem);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s, color .3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.open-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,.18), transparent);
+  transition: left .5s;
+}
+
+.open-btn:hover::before { left: 100%; }
+
+.open-btn:hover {
+  background: var(--burg);
+  color: var(--paper);
+}
+
+.open-btn-dot {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--burg);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: .3; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 1;  transform: translateX(-50%) scale(1.5); }
+}
+
+.sec-title {
+  font-family: var(--ff-title);
+  font-size: clamp(.88rem, 2.5vw, 1.2rem);
+  color: var(--burg);
+  letter-spacing: .14em;
+  line-height: 1.3;
+}
+
+.sec-title-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.88rem, 2.4vw, 1.1rem);
+  color: var(--burg);
+  letter-spacing: .04em;
+  line-height: 1.4;
+}
+
+.wel-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.82rem, 2.1vw, 1rem);
+  color: var(--ink);
+  line-height: 2;
+  max-width: 400px;
+  margin: clamp(.5rem, 1.5vh, .9rem) 0 clamp(.4rem, 1.2vh, .75rem);
+}
+
+.wel-en {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(.72rem, 1.8vw, .9rem);
+  color: var(--ink-md);
+  line-height: 1.85;
+  max-width: 380px;
+}
+
+.fams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 3.5vw, 2.8rem);
+  flex-wrap: wrap;
+  margin-top: clamp(.6rem, 1.8vh, 1rem);
+  width: 100%;
+}
+
+.fam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .18rem;
+}
+
+.fam-tag {
+  font-family: var(--ff-sans);
+  font-size: clamp(.5rem, 1.2vw, .6rem);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--brass-dk);
+}
+
+.fam-nm {
+  font-family: var(--ff-title);
+  font-size: clamp(.74rem, 1.9vw, .92rem);
+  color: var(--burg);
+  font-weight: 600;
+}
+
+.fam-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.65rem, 1.6vw, .8rem);
+  color: var(--ink-lt);
+}
+
+.fam-sep {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--brass);
+  line-height: 1;
+  align-self: center;
+}
+
+.deity-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  margin: clamp(.4rem, 1.2vh, .7rem) 0;
+  position: relative;
+}
+
+.deity-row::before, .deity-row::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,.5), transparent);
+}
+
+.d-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.d-icon svg {
+  width: clamp(13px, 2.4vw, 19px);
+  height: clamp(13px, 2.4vw, 19px);
+  color: var(--burg);
+  opacity: .3;
+  transition: opacity .4s ease;
+}
+
+.d-icon:hover svg { opacity: .6; }
+
+.shloka-box {
+  background: rgba(255,255,255,.52);
+  border: 1px solid rgba(212,175,55,.42);
+  border-radius: 10px;
+  padding: clamp(.8rem, 2.5vw, 1.4rem) clamp(.9rem, 3vw, 1.6rem);
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shloka-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.shloka-corner {
+  position: absolute;
+  font-size: .52rem;
+  color: var(--brass);
+  opacity: .55;
+  line-height: 1;
+}
+
+.shloka-corner.tl { top: .6rem; left: .8rem; }
+.shloka-corner.br { bottom: .6rem; right: .8rem; }
+
+.om-sym {
+  font-family: var(--ff-kn);
+  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+  color: var(--burg);
+  display: block;
+  line-height: 1;
+  margin-bottom: clamp(.45rem, 1.3vh, .7rem);
+  position: relative;
+  z-index: 1;
+}
+
+.shloka-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.75rem, 1.9vw, .92rem);
+  color: var(--burg-dk);
+  line-height: 2;
+  position: relative;
+  z-index: 1;
+}
+
+.shloka-en {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(.62rem, 1.5vw, .76rem);
+  color: var(--ink-lt);
+  line-height: 1.75;
+  border-top: 1px solid rgba(212,175,55,.32);
+  padding-top: clamp(.45rem, 1.2vh, .65rem);
+  margin-top: clamp(.4rem, 1vh, .6rem);
+  position: relative;
+  z-index: 1;
+}
+
+.muhu-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.78rem, 2vw, .96rem);
+  color: var(--gold);
+  letter-spacing: .1em;
+  margin-bottom: clamp(.4rem, 1.2vh, .7rem);
+}
+
+.muhu-big {
+  font-family: var(--ff-title);
+  font-weight: 700;
+  font-size: clamp(4rem, 17vw, 8.5rem);
+  color: var(--burg);
+  line-height: .95;
+  letter-spacing: -.01em;
+  text-shadow: 2px 3px 0 rgba(212,175,55,.22), 0 0 50px rgba(114,47,55,.1);
+}
+
+.muhu-month {
+  font-family: var(--ff-title);
+  font-size: clamp(.9rem, 2.6vw, 1.4rem);
+  color: var(--burg-dk);
+  letter-spacing: .42em;
+  margin-top: .15rem;
+}
+
+.muhu-year {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(.65rem, 1.6vw, .82rem);
+  color: var(--ink-lt);
+  letter-spacing: .22em;
+  margin-top: .1rem;
+}
+
+.muhu-venue {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(.74rem, 1.9vw, .94rem);
+  color: var(--ink-md);
+  line-height: 1.65;
+  margin-top: clamp(.4rem, 1.2vh, .7rem);
+}
+
+.muhu-venue strong {
+  font-family: var(--ff-title);
+  font-style: normal;
+  font-size: clamp(.76rem, 1.9vw, .94rem);
+  color: var(--burg);
+  display: block;
+  letter-spacing: .06em;
+  font-weight: 600;
+  margin-bottom: .15rem;
+}
+
+.muhu-pills {
+  display: flex;
+  gap: clamp(.8rem, 2.5vw, 2rem);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: clamp(.6rem, 1.8vh, 1rem);
+}
+
+.pill { text-align: center; }
+
+.pill-lbl {
+  font-family: var(--ff-sans);
+  font-size: clamp(.48rem, 1.1vw, .58rem);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--brass-dk);
+  margin-bottom: .15rem;
+}
+
+.pill-val {
+  font-family: var(--ff-title);
+  font-size: clamp(.74rem, 1.8vw, .9rem);
+  color: var(--burg);
+  font-weight: 600;
+}
+
+.pill-sub {
+  font-family: var(--ff-kn);
+  font-size: clamp(.6rem, 1.4vw, .74rem);
+  color: var(--ink-lt);
+  margin-top: .1rem;
+}
+
+.venue-hd { flex-shrink: 0; width: 100%; }
+
+.venue-title-kn {
+  font-family: var(--ff-kn);
+  font-size: clamp(.8rem, 2.1vw, 1rem);
+  color: var(--burg);
+  letter-spacing: .04em;
+  line-height: 1.4;
+}
+
+.venue-title-en {
+  font-family: var(--ff-title);
+  font-size: clamp(.82rem, 2vw, 1.02rem);
+  color: var(--burg-dk);
+  letter-spacing: .08em;
+  margin-top: .12rem;
+}
+
+.venue-addr {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(.65rem, 1.6vw, .82rem);
+  color: var(--ink-md);
+  line-height: 1.6;
+  margin-top: .3rem;
+  margin-bottom: clamp(.4rem, 1.2vh, .7rem);
+}
+
+.map-shell {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border: 1.5px solid var(--brass);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 28px rgba(0,0,0,.12);
+}
+
+.map-shell iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.venue-cta {
+  flex-shrink: 0;
+  margin-top: clamp(.5rem, 1.4vh, .8rem);
+}
+
+.btn-dir {
+  display: inline-block;
+  font-family: var(--ff-title);
+  font-size: clamp(.52rem, 1.3vw, .66rem);
+  letter-spacing: .18em;
+  padding: clamp(.52rem, 1.4vh, .7rem) clamp(1.4rem, 4vw, 2rem);
+  border-radius: 40px;
+  border: 1px solid var(--burg);
+  color: var(--burg);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .3s, color .3s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-dir:hover, .btn-dir:focus {
+  background: var(--burg);
+  color: var(--paper);
+  outline: none;
+}
+
+.tap-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 26%;
+  z-index: 20;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tap-zone.left  { left: 8px; }
+.tap-zone.right { right: 0; }
+
+.tap-hint {
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.tap-zone:hover .tap-hint { opacity: 1; }
+
+.tap-hint svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--burg);
+  stroke-width: 1.4;
+  fill: none;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.9rem, 2.5vw, 1.4rem);
+  flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.n-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: .3rem;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1;
+  transition: opacity .25s;
+}
+
+.n-arrow:disabled { opacity: .18; cursor: default; }
+
+.n-arrow svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  stroke: rgba(244,231,199,.5);
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.ndots {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.ndot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244,231,199,.32);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all .3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ndot.on {
+  background: rgba(244,231,199,.82);
+  border-color: rgba(244,231,199,.82);
+  transform: scale(1.35);
+}
+
+.n-count {
+  font-family: var(--ff-title);
+  font-size: clamp(.48rem, 1.1vw, .56rem);
+  letter-spacing: .18em;
+  color: rgba(244,231,199,.32);
+  min-width: 2.8rem;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#one-hint {
+  position: absolute;
+  bottom: 3.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ff-sans);
+  font-size: clamp(.46rem, 1.1vw, .55rem);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(244,231,199,.32);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: hintAnim 3.5s 1.8s ease-in-out forwards;
+}
+
+@keyframes hintAnim {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+  #book {
+    width: min(90vw, 860px);
+    max-height: 580px;
+  }
+}
+
+@media (min-width: 1100px) {
+  #book {
+    width: min(82vw, 960px);
+    max-height: 660px;
+  }
+}
+
+@media (max-width: 380px) {
+  .page { padding: clamp(.9rem, 3.5vw, 1.4rem) clamp(.9rem, 3.8vw, 1.5rem); }
+  .muhu-big { font-size: clamp(3.5rem, 16vw, 5.5rem); }
+  .shloka-box { padding: .7rem .8rem; }
+  .cover-name-en { font-size: clamp(1.35rem, 5.5vw, 2.2rem); }
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  #stage { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+.cover-names-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.h-rule-mt {
+  margin-top: clamp(.6rem, 1.8vh, 1rem);
+}
+
+.h-rule-narrow {
+  max-width: 220px;
+}
+
+.divine-signoff {
+  font-family: var(--ff-kn);
+  font-size: clamp(.62rem, 1.5vw, .76rem);
+  color: var(--ink-lt);
+  margin-top: clamp(.4rem, 1.2vh, .65rem);
+  letter-spacing: .04em;
+}
+
+.map-shell iframe {
+  border: 0;
+  border-radius: 8px;
+}
+
+.mote { will-change: opacity, transform; }
+
+@media (hover: none) {
+  .tap-hint { display: none; }
+  .open-btn:hover { background: transparent; color: var(--burg); }
+  .btn-dir:hover  { background: transparent; color: var(--burg); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stage">
+
+  <div id="book" role="main" aria-label="Engagement Invitation — Sumanth and Vindhya">
+
+    <div class="page p-cover is-active" data-pg="0" role="region" aria-label="Invitation Cover">
+      <div class="p-inset" aria-hidden="true"></div>
+      <span class="cg tl" aria-hidden="true">✦</span>
+      <span class="cg tr" aria-hidden="true">✦</span>
+      <span class="cg bl" aria-hidden="true">✦</span>
+      <span class="cg br" aria-hidden="true">✦</span>
+
+      <div class="wm" aria-hidden="true">
+        <svg viewBox="0 0 500 400" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <rect x="18" y="372" width="464" height="22" rx="3"/>
+          <rect x="8"  y="384" width="484" height="14" rx="2" opacity=".55"/>
+          <rect x="45" y="364" width="410" height="10" rx="1" opacity=".42"/>
+          <rect x="60" y="356" width="380" height="10" rx="1" opacity=".3"/>
+          <rect x="38" y="290" width="18" height="68" rx="2" opacity=".4"/>
+          <rect x="444" y="290" width="18" height="68" rx="2" opacity=".4"/>
+          <ellipse cx="47"  cy="290" rx="14" ry="5.5" opacity=".35"/>
+          <ellipse cx="453" cy="290" rx="14" ry="5.5" opacity=".35"/>
+          <path d="M28 290 L47 268 L66 290Z" opacity=".3"/>
+          <path d="M434 290 L453 268 L472 290Z" opacity=".3"/>
+          <rect x="74"  y="246" width="18" height="110" rx="2"/>
+          <rect x="120" y="246" width="18" height="110" rx="2"/>
+          <rect x="172" y="252" width="14" height="104" rx="2"/>
+          <rect x="314" y="252" width="14" height="104" rx="2"/>
+          <rect x="362" y="246" width="18" height="110" rx="2"/>
+          <rect x="408" y="246" width="18" height="110" rx="2"/>
+          <ellipse cx="83"  cy="246" rx="16" ry="6.5"/>
+          <ellipse cx="129" cy="246" rx="16" ry="6.5"/>
+          <ellipse cx="179" cy="252" rx="13" ry="5.5"/>
+          <ellipse cx="321" cy="252" rx="13" ry="5.5"/>
+          <ellipse cx="371" cy="246" rx="16" ry="6.5"/>
+          <ellipse cx="417" cy="246" rx="16" ry="6.5"/>
+          <rect x="58" y="228" width="384" height="20" rx="2"/>
+          <rect x="62" y="212" width="376" height="14" rx="2" opacity=".62"/>
+          <circle cx="116" cy="219" r="5"  opacity=".42"/>
+          <circle cx="158" cy="219" r="5"  opacity=".42"/>
+          <circle cx="200" cy="219" r="5"  opacity=".42"/>
+          <circle cx="242" cy="219" r="5"  opacity=".42"/>
+          <circle cx="250" cy="219" r="5.5" opacity=".55"/>
+          <circle cx="258" cy="219" r="5"  opacity=".42"/>
+          <circle cx="300" cy="219" r="5"  opacity=".42"/>
+          <circle cx="342" cy="219" r="5"  opacity=".42"/>
+          <circle cx="384" cy="219" r="5"  opacity=".42"/>
+          <rect x="192" y="260" width="12" height="96" rx="2"/>
+          <rect x="296" y="260" width="12" height="96" rx="2"/>
+          <path d="M204 260 Q250 214 296 260" stroke="currentColor" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+          <polygon points="250,188 262,210 238,210"/>
+          <ellipse cx="195" cy="249" rx="6"  ry="8" opacity=".32"/>
+          <ellipse cx="305" cy="249" rx="6"  ry="8" opacity=".32"/>
+          <path d="M82 212 L250 130 L418 212Z" opacity=".48"/>
+          <line x1="250" y1="130" x2="148" y2="212" stroke="currentColor" stroke-width="1.4" opacity=".38"/>
+          <line x1="250" y1="130" x2="352" y2="212" stroke="currentColor" stroke-width="1.4" opacity=".38"/>
+          <line x1="250" y1="148" x2="192" y2="212" stroke="currentColor" stroke-width="1"   opacity=".25"/>
+          <line x1="250" y1="148" x2="308" y2="212" stroke="currentColor" stroke-width="1"   opacity=".25"/>
+          <path d="M120 152 L250 80 L380 152Z" opacity=".44"/>
+          <line x1="250" y1="80" x2="176" y2="152" stroke="currentColor" stroke-width="1.2" opacity=".3"/>
+          <line x1="250" y1="80" x2="324" y2="152" stroke="currentColor" stroke-width="1.2" opacity=".3"/>
+          <path d="M158 104 L250 48 L342 104Z" opacity=".40"/>
+          <rect x="244" y="38" width="12" height="16" rx="2"/>
+          <ellipse cx="250" cy="36" rx="13" ry="8"/>
+          <ellipse cx="250" cy="25" rx="9"  ry="6.5"/>
+          <rect x="246" y="16" width="8"  height="13"/>
+          <ellipse cx="250" cy="14" rx="6.5" ry="5"/>
+          <line x1="250" y1="9"  x2="250" y2="2" stroke="currentColor" stroke-width="2.2"/>
+          <polygon points="250,2 266,7 250,12" opacity=".48"/>
+          <path d="M116 212 Q130 196 140 212" stroke="currentColor" stroke-width="2" fill="none" opacity=".3"/>
+          <path d="M360 212 Q370 196 384 212" stroke="currentColor" stroke-width="2" fill="none" opacity=".3"/>
+          <rect x="170" y="282" width="160" height="74" rx="4" opacity=".1"/>
+          <path d="M188 282 Q250 258 312 282" stroke="currentColor" stroke-width="2" fill="rgba(currentColor,.05)" opacity=".25"/>
+        </svg>
+      </div>
+
+      <div class="cover-body">
+        <p class="cover-om" lang="kn">ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ</p>
+
+        <p class="lbl">✦ &nbsp; Engagement Invitation &nbsp; ✦</p>
+
+        <div class="cover-names-col">
+          <p class="cover-prefix" lang="kn">ಚಿ|| ಸುದೀಪ್ತ ಸುಮಂತ್ ಉಡುಪಿ</p>
+          <span class="cover-name-en">Sumanth Udupi</span>
+          <span class="cover-amp">&amp;</span>
+          <p class="cover-prefix" lang="kn">ಚಿ|| ಸೌ|| ವಿಂಧ್ಯ ಉಡುಪ</p>
+          <span class="cover-name-en">Vindhya Udupa</span>
+        </div>
+
+        <p class="cover-sub">A Sacred Union Begins</p>
+
+        <div class="cover-badge">
+          ✦ &nbsp; 12<sup>TH</sup> JULY 2026 &nbsp;·&nbsp; NAGOOR, UDUPI &nbsp; ✦
+        </div>
+
+        <button type="button" class="open-btn" id="open-folio" aria-label="Open invitation folio">
+          Open the Folio
+          <div class="open-btn-dot" aria-hidden="true"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="page p-welcome" data-pg="1" role="region" aria-label="Welcome and invitation">
+      <div class="p-inset" aria-hidden="true"></div>
+      <span class="cg tl" aria-hidden="true">✦</span>
+      <span class="cg tr" aria-hidden="true">✦</span>
+      <span class="cg bl" aria-hidden="true">✦</span>
+      <span class="cg br" aria-hidden="true">✦</span>
+
+      <p class="lbl">Warm Regards</p>
+      <h2 class="sec-title">The Invitation</h2>
+
+      <div class="h-rule"><span class="h-rule-gem">❦</span></div>
+
+      <p class="wel-kn" lang="kn">
+        ಸಮಸ್ತ ದೇವರ ಆಶೀರ್ವಾದ ಹಾಗೂ ಎರಡು ಕುಟುಂಬಗಳ<br>
+        ಅಪಾರ ಸಂತೋಷದೊಂದಿಗೆ,<br>
+        <strong>ಚಿ|| ಸುಮಂತ್ ಉಡುಪಿ</strong> ಮತ್ತು<br>
+        <strong>ಚಿ|| ಸೌ|| ವಿಂಧ್ಯ ಉಡುಪ</strong> ಅವರ<br>
+        ಕುಟುಂಬಸ್ಥರು ತಮ್ಮ ಮಕ್ಕಳ <strong>ವಾಗ್ದಾನ ಮಹೋತ್ಸವ</strong>ಕ್ಕೆ<br>
+        ನಿಮ್ಮನ್ನು ಆದರದಿಂದ ಆಹ್ವಾನಿಸುತ್ತಾರೆ.
+      </p>
+
+      <p class="wel-en" lang="en">
+        With hearts overflowing with joy and the blessings<br>
+        of our forebears, the families of<br>
+        <em>ಚಿ|| Sumanth Udupi</em> &amp; <em>ಚಿ|| ಸೌ|| Vindhya Udupa</em><br>
+        joyfully invite you to witness the sacred<br>
+        exchange of rings — a first step into eternity.
+      </p>
+
+      <div class="h-rule h-rule-mt"><span class="h-rule-gem">✦</span></div>
+
+      <div class="fams">
+        <div class="fam">
+          <span class="fam-tag">Groom's Family</span>
+          <span class="fam-nm">Udupi Family</span>
+          <span class="fam-kn" lang="kn">ಉಡುಪಿ ಕುಟುಂಬ</span>
+        </div>
+        <span class="fam-sep" aria-hidden="true">❦</span>
+        <div class="fam">
+          <span class="fam-tag">Bride's Family</span>
+          <span class="fam-nm">Udupa Family</span>
+          <span class="fam-kn" lang="kn">ಉಡುಪ ಕುಟುಂಬ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page p-divine" data-pg="2" role="region" aria-label="Divine blessings and shloka">
+      <div class="p-inset" aria-hidden="true"></div>
+      <span class="cg tl" aria-hidden="true">✦</span>
+      <span class="cg tr" aria-hidden="true">✦</span>
+      <span class="cg bl" aria-hidden="true">✦</span>
+      <span class="cg br" aria-hidden="true">✦</span>
+
+      <p class="lbl">Divine Presence</p>
+      <h2 class="sec-title-kn" lang="kn">ಪಂಚದೇವ ಆಶೀರ್ವಾದ</h2>
+
+      <div class="deity-row" role="separator" aria-hidden="true">
+        <div class="d-icon" title="Sudarshana Chakra — Lord Vishnu">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="16" cy="16" r="8"  stroke="currentColor" stroke-width=".8" stroke-dasharray="2.5 2" opacity=".7"/>
+            <circle cx="16" cy="16" r="3"  fill="currentColor"/>
+            <circle cx="16" cy="16" r="1.4" fill="white" opacity=".5"/>
+            <line x1="16" y1="3"  x2="16" y2="11" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="16" y1="21" x2="16" y2="29" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="3"  y1="16" x2="11" y2="16" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="21" y1="16" x2="29" y2="16" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="6.9"  y1="6.9"  x2="11.7" y2="11.7" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="20.3" y1="20.3" x2="25.1" y2="25.1" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="25.1" y1="6.9"  x2="20.3" y2="11.7" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="6.9"  y1="25.1" x2="11.7" y2="20.3" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </div>
+
+        <div class="d-icon" title="Vel — Lord Subrahmanya">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="16" y1="7" x2="16" y2="30" stroke="currentColor" stroke-width="2"/>
+            <polygon points="16,3 19.5,12 16,16.5 12.5,12" fill="currentColor"/>
+            <polygon points="16,3 19.5,12 16,16.5 12.5,12" stroke="currentColor" stroke-width=".7" fill="none" opacity=".5"/>
+            <path d="M9.5 17 Q12.5 14.5 16 17 Q19.5 14.5 22.5 17 L21 18.5 Q19.5 17 16 18.5 Q12.5 17 11 18.5Z" fill="currentColor"/>
+            <circle cx="16" cy="27" r="3" stroke="currentColor" stroke-width="1.1" fill="none"/>
+            <circle cx="16" cy="27" r="1.3" fill="currentColor" opacity=".6"/>
+          </svg>
+        </div>
+
+        <div class="d-icon" title="Trishul — Lord Shiva">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="16" y1="6" x2="16" y2="30" stroke="currentColor" stroke-width="2.1"/>
+            <path d="M16 12 Q10 8 9 5 Q11 9.5 16 13Z" fill="currentColor"/>
+            <path d="M16 12 Q22 8 23 5 Q21 9.5 16 13Z" fill="currentColor"/>
+            <line x1="10" y1="20" x2="22" y2="20" stroke="currentColor" stroke-width="1.8"/>
+            <line x1="10" y1="22.5" x2="22" y2="22.5" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+            <ellipse cx="16" cy="28" rx="4.5" ry="1.8" stroke="currentColor" stroke-width="1.1" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="d-icon" title="Murali Flute — Lord Krishna">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="15" width="26" height="3.5" rx="1.75" fill="currentColor" transform="rotate(-14 16 16)"/>
+            <circle cx="9"  cy="16.5" r="1.25" fill="white" fill-opacity=".75" transform="rotate(-14 16 16)"/>
+            <circle cx="13" cy="16.5" r="1.25" fill="white" fill-opacity=".75" transform="rotate(-14 16 16)"/>
+            <circle cx="17" cy="16.5" r="1.25" fill="white" fill-opacity=".75" transform="rotate(-14 16 16)"/>
+            <circle cx="21" cy="16.5" r="1.25" fill="white" fill-opacity=".75" transform="rotate(-14 16 16)"/>
+            <circle cx="6"  cy="17.5" r="1.6"  fill="currentColor" transform="rotate(-14 16 16)"/>
+            <text x="22" y="11" font-size="5.5" fill="currentColor" opacity=".55" font-family="serif">♪</text>
+          </svg>
+        </div>
+
+        <div class="d-icon" title="Gada Mace — Lord Hanuman">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="16" y1="15" x2="16" y2="30" stroke="currentColor" stroke-width="2.2"/>
+            <ellipse cx="16" cy="8.5" rx="8" ry="8" fill="currentColor"/>
+            <ellipse cx="16" cy="8.5" rx="5.5" ry="5.5" fill="white" fill-opacity=".18"/>
+            <circle  cx="16" cy="8.5" r="2.5" fill="currentColor" opacity=".7"/>
+            <circle  cx="16" cy="8.5" r="1.1" fill="white" opacity=".6"/>
+            <line x1="11" y1="19" x2="21" y2="19" stroke="currentColor" stroke-width="1.1" opacity=".48"/>
+            <line x1="11" y1="23" x2="21" y2="23" stroke="currentColor" stroke-width="1.1" opacity=".48"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="shloka-box">
+        <span class="shloka-corner tl" aria-hidden="true">✦</span>
+        <span class="shloka-corner br" aria-hidden="true">✦</span>
+
+        <span class="om-sym" lang="kn" aria-label="Om">ॐ</span>
+
+        <p class="shloka-kn" lang="kn">
+          ವಿಷ್ಣುಂ ಶಿವಂ ಕೃಷ್ಣಂ ಸ್ಕಂದಂ ಹನೂಮಂತಂ ನಮಾಮ್ಯಹಮ್ |<br>
+          ಪಂಚದೇವಾಃ ಪ್ರಸನ್ನಾಃ ಸ್ಯುಃ ಶುಭಲಗ್ನೇ ಶುಭಾಶಯಾಃ ||<br>
+          ಕುಲದೇವತಾ ಪ್ರಸಾದೇನ ವಾಗ್ದಾನ ಮಹೋತ್ಸವೇ ಶುಭೇ |<br>
+          ಸುಮಂತ್–ವಿಂಧ್ಯಯೋಃ ಮಂಗಲಂ ಭವತು ಸರ್ವದಾ ||
+        </p>
+
+        <p class="shloka-en" lang="en">
+          "May Vishnu, Shiva, Krishna, Skanda &amp; Hanuman —<br>
+          these Five Sacred Ones — bless this auspicious hour.<br>
+          By the grace of our Kuladevatas, may Sumanth<br>
+          and Vindhya walk in eternal joy."
+        </p>
+      </div>
+
+      <p class="divine-signoff" lang="kn">
+        ಚಿ|| ಸುಮಂತ್ &nbsp;✦&nbsp; ಚಿ|| ಸೌ|| ವಿಂಧ್ಯ
+      </p>
+    </div>
+
+    <div class="page p-muhu" data-pg="3" role="region" aria-label="Auspicious date and venue">
+      <div class="p-inset" aria-hidden="true"></div>
+      <span class="cg tl" aria-hidden="true">✦</span>
+      <span class="cg tr" aria-hidden="true">✦</span>
+      <span class="cg bl" aria-hidden="true">✦</span>
+      <span class="cg br" aria-hidden="true">✦</span>
+
+      <p class="muhu-kn" lang="kn">✦ &nbsp; ಶುಭ ಮುಹೂರ್ತ &nbsp; ✦</p>
+
+      <div class="muhu-big" aria-label="Twelfth">12</div>
+      <div class="muhu-month">JULY</div>
+      <div class="muhu-year">Two Thousand &amp; Twenty-Six</div>
+
+      <div class="h-rule h-rule-narrow"><span class="h-rule-gem">❦</span></div>
+
+      <div class="muhu-venue">
+        <strong>Sri Krishna Lalitha Kala Mandira</strong>
+        <span lang="kn">ಶ್ರೀ ಕೃಷ್ಣ ಲಲಿತಾ ಕಲಾ ಮಂದಿರ</span><br>
+        Nagoor, Udupi — Karnataka
+      </div>
+
+      <div class="muhu-pills">
+        <div class="pill">
+          <div class="pill-lbl">Date</div>
+          <div class="pill-val">12 July 2026</div>
+          <div class="pill-sub" lang="kn">ಆಷಾಢ ಮಾಸ</div>
+        </div>
+        <div class="pill">
+          <div class="pill-lbl">Occasion</div>
+          <div class="pill-val">Engagement</div>
+          <div class="pill-sub" lang="kn">ವಾಗ್ದಾನ ಮಹೋತ್ಸವ</div>
+        </div>
+        <div class="pill">
+          <div class="pill-lbl">Venue</div>
+          <div class="pill-val">Nagoor, Udupi</div>
+          <div class="pill-sub" lang="kn">ನಾಗೂರು, ಉಡುಪಿ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page p-venue" data-pg="4" role="region" aria-label="Venue location and map">
+      <div class="p-inset" aria-hidden="true"></div>
+      <span class="cg tl" aria-hidden="true">✦</span>
+      <span class="cg tr" aria-hidden="true">✦</span>
+      <span class="cg bl" aria-hidden="true">✦</span>
+      <span class="cg br" aria-hidden="true">✦</span>
+
+      <div class="venue-hd">
+        <p class="lbl" lang="kn">ನಾಗೂರಿಗೆ ಸ್ವಾಗತ</p>
+        <p class="venue-title-kn" lang="kn">ಶ್ರೀ ಕೃಷ್ಣ ಲಲಿತಾ ಕಲಾ ಮಂದಿರ</p>
+        <p class="venue-title-en">Sri Krishna Lalitha Kala Mandira</p>
+        <p class="venue-addr">Nagoor &nbsp;·&nbsp; Udupi &nbsp;·&nbsp; Karnataka</p>
+      </div>
+
+      <div class="map-shell">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.7977577419288!2d74.63620480600737!3d13.786080064126601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc8a87bc0f7751%3A0xe4caca14081dd920!2sSri%20Krishna%20Lalitha%20Kala%20Mandira!5e0!3m2!1sen!2sin!4v1780235354375!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="origin"
+          title="Sri Krishna Lalitha Kala Mandira, Nagoor, Udupi">
+        </iframe>
+      </div>
+
+      <div class="venue-cta">
+        <a
+          href="https://maps.google.com/?q=Sri+Krishna+Lalitha+Kala+Mandira+Nagoor+Udupi"
+          class="btn-dir"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Get directions to Sri Krishna Lalitha Kala Mandira">
+          ↗ &nbsp;Get Directions
+        </a>
+      </div>
+    </div>
+
+    <button type="button" class="tap-zone left" id="tp-prev" aria-label="Previous page">
+      <div class="tap-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </div>
+    </button>
+
+    <button type="button" class="tap-zone right" id="tp-next" aria-label="Next page">
+      <div class="tap-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+      </div>
+    </button>
+
+  </div>
+
+  <nav id="nav" aria-label="Page navigation">
+    <button type="button" class="n-arrow" id="na-prev" aria-label="Previous page">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <div class="ndots" role="tablist" aria-label="Pages">
+      <button type="button" class="ndot on"  data-pg="0" role="tab" aria-label="Cover page"      aria-selected="true"></button>
+      <button type="button" class="ndot"     data-pg="1" role="tab" aria-label="Welcome page"    aria-selected="false"></button>
+      <button type="button" class="ndot"     data-pg="2" role="tab" aria-label="Blessings page"  aria-selected="false"></button>
+      <button type="button" class="ndot"     data-pg="3" role="tab" aria-label="Date page"       aria-selected="false"></button>
+      <button type="button" class="ndot"     data-pg="4" role="tab" aria-label="Venue page"      aria-selected="false"></button>
+    </div>
+
+    <div class="n-count" id="n-count" aria-live="polite">1 / 5</div>
+
+    <button type="button" class="n-arrow" id="na-next" aria-label="Next page">
+      <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+  </nav>
+
+  <div id="one-hint" aria-hidden="true">← tap edges to flip pages →</div>
+
+</div>
+
+<script>
+(function () {
+
+  var TOTAL   = 5;
+  var cur     = 0;
+  var busy    = false;
+  var touchSX = 0;
+  var touchSY = 0;
+
+  var pages  = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var dots   = Array.prototype.slice.call(document.querySelectorAll('.ndot'));
+  var count  = document.getElementById('n-count');
+  var tpPrev = document.getElementById('tp-prev');
+  var tpNext = document.getElementById('tp-next');
+  var naPrev = document.getElementById('na-prev');
+  var naNext = document.getElementById('na-next');
+  var openBtn = document.getElementById('open-folio');
+
+  function goTo(idx, dir) {
+    if (busy || idx === cur || idx < 0 || idx >= TOTAL) { return; }
+    busy = true;
+
+    var fromPage = pages[cur];
+    var toPage   = pages[idx];
+
+    var inX  = dir > 0 ? '65px' : '-65px';
+    var outX = dir > 0 ? '-65px' : '65px';
+
+    toPage.style.cssText = 'opacity:0;transform:translate3d(' + inX + ',0,0);transition:none;pointer-events:none;z-index:2;';
+    fromPage.style.zIndex = '1';
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var T = 'transform ' + getComputedStyle(document.documentElement).getPropertyValue('--flip-dur') + ' ' + getComputedStyle(document.documentElement).getPropertyValue('--flip-ease') + ', opacity ' + getComputedStyle(document.documentElement).getPropertyValue('--flip-dur') + ' ease';
+
+        fromPage.style.transition = 'transform 560ms cubic-bezier(0.77,0,0.175,1), opacity 560ms ease';
+        fromPage.style.transform  = 'translate3d(' + outX + ',0,0)';
+        fromPage.style.opacity    = '0';
+
+        toPage.style.transition = 'transform 560ms cubic-bezier(0.77,0,0.175,1), opacity 560ms ease';
+        toPage.style.transform  = 'translate3d(0,0,0)';
+        toPage.style.opacity    = '1';
+
+        setTimeout(function () {
+          fromPage.style.cssText = '';
+          fromPage.classList.remove('is-active');
+
+          toPage.style.cssText = '';
+          toPage.classList.add('is-active');
+
+          cur = idx;
+          syncUI();
+          busy = false;
+        }, 575);
+      });
+    });
+  }
+
+  function goNext() { goTo(cur + 1, +1); }
+  function goPrev() { goTo(cur - 1, -1); }
+
+  function syncUI() {
+    dots.forEach(function (d, i) {
+      var on = (i === cur);
+      d.classList.toggle('on', on);
+      d.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    count.textContent = (cur + 1) + ' / ' + TOTAL;
+    naPrev.disabled = tpPrev.disabled = (cur === 0);
+    naNext.disabled = tpNext.disabled = (cur === TOTAL - 1);
+  }
+
+  tpPrev.addEventListener('click', goPrev);
+  tpNext.addEventListener('click', goNext);
+  naPrev.addEventListener('click', goPrev);
+  naNext.addEventListener('click', goNext);
+
+  if (openBtn) {
+    openBtn.addEventListener('click', function () { goTo(1, +1); });
+  }
+
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      var t = parseInt(d.getAttribute('data-pg'), 10);
+      goTo(t, t > cur ? +1 : -1);
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  { goNext(); }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    { goPrev(); }
+  });
+
+  var book = document.getElementById('book');
+
+  book.addEventListener('touchstart', function (e) {
+    touchSX = e.touches[0].clientX;
+    touchSY = e.touches[0].clientY;
+  }, { passive: true });
+
+  book.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchSX;
+    var dy = e.changedTouches[0].clientY - touchSY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 42) {
+      if (dx < 0) { goNext(); } else { goPrev(); }
+    }
+  }, { passive: true });
+
+  (function spawnMotes() {
+    var stage = document.getElementById('stage');
+    var colors = ['rgba(234,162,33,.85)', 'rgba(212,175,55,.8)', 'rgba(255,195,11,.7)', 'rgba(114,47,55,.6)', 'rgba(244,231,199,.5)'];
+    for (var i = 0; i < 16; i++) {
+      var m  = document.createElement('div');
+      var sz = 2 + Math.random() * 5;
+      m.className = 'mote';
+      m.style.cssText = [
+        'width:'  + sz + 'px',
+        'height:' + sz + 'px',
+        'left:'   + (Math.random() * 100) + '%',
+        'top:'    + (15 + Math.random() * 72) + '%',
+        'background:' + colors[Math.floor(Math.random() * colors.length)],
+        '--d:'  + (9 + Math.random() * 11) + 's',
+        '--dl:' + (Math.random() * 9) + 's',
+        '--op:' + (.025 + Math.random() * .055).toFixed(3)
+      ].join(';');
+      stage.appendChild(m);
+    }
+  }());
+
+  syncUI();
+
+}());
+</script>
+
+</body>
+</html>
