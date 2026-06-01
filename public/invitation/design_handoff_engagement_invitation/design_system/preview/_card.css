@@ -1,0 +1,35 @@
+/* Shared base for Design System preview cards */
+@import url('../colors_and_type.css');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%;
+  font-family: var(--ff-body);
+  color: var(--fg1);
+  background: var(--ivory);
+}
+.card {
+  padding: 22px 26px;
+  min-height: 100%;
+}
+.card.dark {
+  background:
+    radial-gradient(ellipse at 22% 28%, rgba(212,175,55,.22) 0%, transparent 50%),
+    linear-gradient(165deg, var(--kumkum-deep) 0%, var(--kumkum-dark) 40%, var(--kumkum) 100%);
+  color: var(--fg-on-dark);
+}
+.row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; }
+.col { display: flex; flex-direction: column; gap: 12px; }
+.eyebrow {
+  font-family: var(--ff-body);
+  font-size: 10px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  margin-bottom: 14px;
+}
+.dark .eyebrow { color: var(--marigold); }
+.mono {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 11px;
+}

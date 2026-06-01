@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Vel (Divine Lance) — Lord Subrahmanya">
+  <line x1="24" y1="10" x2="24" y2="44" stroke="#800020" stroke-width="2.4"></line>
+  <polygon points="24,4 28,14 24,20 20,14" fill="#800020"></polygon>
+  <polygon points="24,4 28,14 24,20 20,14" stroke="#D4AF37" stroke-width=".8" fill="none"></polygon>
+  <path d="M13 22 Q18 19 24 22 Q30 19 35 22 L33 24 Q30 22 24 24 Q18 22 15 24 Z" fill="#800020"></path>
+  <circle cx="24" cy="40" r="4" stroke="#D4AF37" stroke-width="1.4" fill="none"></circle>
+  <circle cx="24" cy="40" r="1.8" fill="#D4AF37" opacity=".65"></circle>
+</svg>

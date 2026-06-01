@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" role="img" aria-label="Kolam corner ornament">
+  <path d="M8 8 L8 56 Q8 8 56 8 Z" stroke="#D4AF37" stroke-width="1.4" fill="rgba(212,175,55,.09)"></path>
+  <circle cx="8" cy="8" r="4" fill="#D4AF37"></circle>
+  <circle cx="32" cy="8" r="3" fill="#EAA221" opacity=".5"></circle>
+  <circle cx="8" cy="32" r="3" fill="#EAA221" opacity=".5"></circle>
+  <path d="M8 8 Q20 15 15 26 Q8 18 8 8Z" fill="rgba(212,175,55,.3)"></path>
+  <path d="M8 8 Q15 20 26 15 Q18 8 8 8Z" fill="rgba(212,175,55,.3)"></path>
+  <path d="M8 28 Q22 20 30 8" stroke="#D4AF37" stroke-width=".9" opacity=".55"></path>
+  <path d="M8 52 Q32 28 52 8" stroke="#D4AF37" stroke-width=".7" opacity=".3"></path>
+</svg>
