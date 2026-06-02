@@ -43,7 +43,9 @@ import { initAudio, playFlip, playOpen, toggleAmbience, isSoundEnabled } from '.
   /* Sound toggle button */
   const soundPin = document.getElementById('sound-pin');
   if (soundPin) {
-    soundPin.setAttribute('aria-pressed', String(isSoundEnabled()));
+    const enabled = isSoundEnabled();
+    soundPin.setAttribute('aria-pressed', String(enabled));
+    soundPin.classList.toggle('on', enabled);
     soundPin.addEventListener('click', function () {
       const enabled = toggleAmbience();
       soundPin.classList.toggle('on', enabled);
