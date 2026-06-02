@@ -746,20 +746,21 @@ html, body {
 /* ── Sound Toggle Button ──────────────────────────────── */
 .sound-pin {
   position: fixed;
-  left: max(54px, calc(env(safe-area-inset-left, 12px) + 42px));
-  bottom: max(12px, env(safe-area-inset-bottom, 12px));
+  top: max(16px, env(safe-area-inset-top, 16px));
+  right: max(16px, calc(env(safe-area-inset-right, 16px) + 12px));
   z-index: 9600;
-  width: 34px; height: 34px; border-radius: 8px;
-  border: 1px solid rgba(212,175,55,.38);
-  background: rgba(30,6,15,.62);
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  width: 32px; height: 32px; border-radius: 6px;
+  border: 1px solid rgba(212,175,55,.22);
+  background: transparent;
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer; color: rgba(212,175,55,.55); padding: 0;
-  transition: background .22s, color .22s, transform .12s;
+  cursor: pointer; color: rgba(212,175,55,.38); padding: 0;
+  transition: background .24s, border-color .24s, color .24s, transform .12s;
 }
-.sound-pin:active { transform: scale(.88); }
-.sound-pin.on { background: var(--brass); color: var(--burg-dp); border-color: var(--brass); }
-.sound-pin svg { width: 15px; height: 15px; }
+.sound-pin:hover { border-color: rgba(212,175,55,.35); color: rgba(212,175,55,.52); }
+.sound-pin:active { transform: scale(.92); }
+.sound-pin.on { background: rgba(212,175,55,.12); border-color: rgba(212,175,55,.42); color: var(--brass); }
+.sound-pin.on:hover { background: rgba(212,175,55,.18); border-color: var(--brass); }
+.sound-pin svg { width: 16px; height: 16px; }
 
 
 /* ══════════════════════════════════════════════════════════
