@@ -16,12 +16,12 @@ export function initAudio(reducedMotion) {
 
   // Preload audio files
   if (!prefersReducedMotion) {
-    loadAudioFile('audio/page-flip.mp3', (audio) => {
+    loadAudioFile('/invitation/audio/page-flip.mp3', (audio) => {
       flipAudio = audio;
       flipAudio.volume = 0.6;
     });
-    loadAudioFile('audio/page-open.mp3', (audio) => { openAudio = audio; });
-    loadAudioFile('audio/ambient.mp3', (audio) => {
+    loadAudioFile('/invitation/audio/page-open.mp3', (audio) => { openAudio = audio; });
+    loadAudioFile('/invitation/audio/ambient.mp3', (audio) => {
       ambienceAudio = audio;
       ambienceAudio.loop = true;
       ambienceAudio.volume = 0.35;
