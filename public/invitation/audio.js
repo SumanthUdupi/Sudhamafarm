@@ -8,9 +8,11 @@ let flipAudio = null;
 let openAudio = null;
 let ambienceAudio = null;
 let ambienceStarted = false;
+let userInteracted = false;
 
 export function initAudio(reducedMotion) {
   prefersReducedMotion = reducedMotion;
+  // Default to ENABLED unless explicitly disabled in localStorage
   soundEnabled = localStorage.getItem('invitation-sound') !== 'off';
   if (prefersReducedMotion) soundEnabled = false;
 
@@ -29,6 +31,19 @@ export function initAudio(reducedMotion) {
       startAmbience();
       ambienceStarted = true;
     });
+  }
+
+  // Trigger ambient on first user interaction (fallback for autoplay policy)
+  document.addEventListener('click', startAmbienceOnce, { once: true, passive: true });
+  document.addEventListener('touchstart', startAmbienceOnce, { once: true, passive: true });
+  document.addEventListener('keydown', startAmbienceOnce, { once: true, passive: true });
+}
+
+function startAmbienceOnce() {
+  if (!userInteracted && !ambienceStarted && ambienceAudio) {
+    userInteracted = true;
+    startAmbience();
+    ambienceStarted = true;
   }
 }
 
