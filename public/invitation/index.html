@@ -19,7 +19,7 @@
 
 <div id="stage" aria-label="Engagement Invitation">
 
-  <div id="book" role="main" aria-label="Invitation folio — Sumanth and Vindhya">
+  <main id="book" aria-label="Invitation folio — Sumanth and Vindhya">
 
     <!-- ══ PAGE 0 · COVER ════════════════════════════════════ -->
     <div class="page p-cover is-active" data-pg="0" role="region" aria-label="Invitation Cover">
@@ -30,7 +30,7 @@
       <span class="cg br" aria-hidden="true">✦</span>
 
       <div class="wm" aria-hidden="true">
-        <svg viewBox="0 0 500 400" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 500 400" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="18" y="372" width="464" height="22" rx="3"/>
           <rect x="8" y="384" width="484" height="14" rx="2" opacity=".55"/>
           <rect x="45" y="364" width="410" height="10" rx="1" opacity=".42"/>
@@ -63,7 +63,7 @@
       </div>
 
       <div class="cover-body">
-        <p class="cover-om" lang="kn">ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ</p>
+        <p class="cover-om" lang="kn">ಕುಲದೇವತಾ ಪ್ರಸನ್ನ</p>
         <p class="lbl">✦ &nbsp; Engagement Invitation &nbsp; ✦</p>
         <div class="cover-names-col">
           <p class="cover-prefix" lang="kn">ಚಿ|| ಸುಮಂತ್ ಉಡುಪಿ</p>
@@ -90,7 +90,7 @@
       <span class="cg bl" aria-hidden="true">✦</span>
       <span class="cg br" aria-hidden="true">✦</span>
 
-      <p class="lbl">Warm Regards</p>
+      <p class="lbl">With Open Hearts</p>
       <h2 class="sec-title-kn" lang="kn">ನಿಶ್ಚಿತಾರ್ಥ</h2>
       <div class="h-rule"><span class="h-rule-gem">❦</span></div>
 
@@ -121,8 +121,8 @@
         <span class="fam-sep" aria-hidden="true">❦</span>
         <div class="fam">
           <span class="fam-tag">Bride&#8217;s Family</span>
-          <span class="fam-nm">Udupa Family</span>
-          <span class="fam-kn" lang="kn">ಉಡುಪ ಕುಟುಂಬ</span>
+          <span class="fam-nm">Vadeyaramata Family</span>
+          <span class="fam-kn" lang="kn">ಒಡೆಯರ ಮಠ ಕುಟುಂಬ</span>
         </div>
       </div>
     </div>
@@ -139,12 +139,12 @@
       <p class="muhu-kn" lang="kn">✦ &nbsp; ಶುಭ ಮುಹೂರ್ತ &nbsp; ✦</p>
       <div class="muhu-big" aria-label="Twelfth">12</div>
       <div class="muhu-month">JULY</div>
-      <div class="muhu-year">Two Thousand &amp; Twenty-Six</div>
+      <div class="muhu-year">2026</div>
       <div class="h-rule h-rule-narrow"><span class="h-rule-gem">❦</span></div>
       <div class="muhu-venue">
         <strong>Sri Krishna Lalitha Kala Mandira</strong>
         <span lang="kn">ಶ್ರೀ ಕೃಷ್ಣ ಲಲಿತಾ ಕಲಾ ಮಂದಿರ</span><br>
-        Nagoor, Udupi &#8212; Karnataka
+        Nagoor &#183; Udupi, Karnataka
       </div>
       <div class="muhu-pills">
         <div class="pill">
@@ -183,16 +183,27 @@
 
       <div class="map-shell">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.7977577419288!2d74.63620480600737!3d13.786080064126601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc8a87bc0f7751%3A0xe4caca14081dd920!2sSri%20Krishna%20Lalitha%20Kala%20Mandira!5e0!3m2!1sen!2sin!4v1780235354375!5m2!1sen!2sin"
+          id="venue-map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.7977577419288!2d74.63620480600737!3d13.786080064126601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc8a87bc0f7751%3A0xe4caca14081dd920!2sSri%20Krishna%20Lalitha%20Kala%20Mandira!5e0!3m2!1sen!2sin!4v1780235354375!5m2!1sen!2sin&t=k"
           width="100%" height="100%"
           allowfullscreen="" loading="lazy" referrerpolicy="origin"
-          title="Sri Krishna Lalitha Kala Mandira, Nagoor, Udupi">
+          title="Sri Krishna Lalitha Kala Mandira, Nagoor, Udupi — Interactive Map"
+          tabindex="0"
+          onerror="document.getElementById('venue-map').style.display='none'; document.getElementById('map-fallback').style.display='block';">
         </iframe>
+        <div id="map-fallback" style="display:none; padding: 1.5rem; text-align: center; font-family: var(--ff-b); color: var(--ink); background: var(--paper-warm);">
+          <p style="margin: 0 0 1rem 0; font-size: .9rem;">Map could not load. View the venue on Google Maps:</p>
+          <a href="https://maps.google.com/?q=Sri+Krishna+Lalitha+Kala+Mandira+Nagoor+Udupi"
+             target="_blank" rel="noopener noreferrer"
+             style="display: inline-block; padding: .5rem 1.2rem; background: var(--brass); color: var(--paper); border-radius: 4px; text-decoration: none; font-weight: 500;">
+            Open in Google Maps
+          </a>
+        </div>
       </div>
 
       <div class="venue-cta">
         <a href="https://maps.google.com/?q=Sri+Krishna+Lalitha+Kala+Mandira+Nagoor+Udupi"
-           class="btn-dir" target="_blank" rel="noopener noreferrer"
+           class="link-cta" target="_blank" rel="noopener noreferrer"
            aria-label="Get directions to venue">
           &#8599;&nbsp; Get Directions
         </a>
@@ -245,15 +256,17 @@
       <p class="close-title" lang="kn">ಶುಭಮಸ್ತು</p>
 
       <p class="close-quote" lang="kn">
-        ಕುಟುಂಬಗಳ ಮಿಲನ, ಪ್ರೀತಿಯ ಉಡುಗೊರೆ |<br>
-        ಎಲ್ಲರ ಆಶೀರ್ವಾದ, ಜೀವನದ ಸಾಥಿ ||
+        ಉಡುಪಿಯ ಕಡಲ ತೀರದ ಮಂದಾನಿಲದಲಿ,<br>
+        ಗುಡಿಯ ಘಂಟಾನಾದದ ಮಂಗಳ ರಾಗದಲಿ,<br>
+        ಸುಮಂತ್ ಮತ್ತು ವಿಂಧ್ಯಾ ಜೋಡಿಯ ಹೊಸ ಪಯಣದ ಪ್ರಥಮ ಹೆಜ್ಜೆ.<br>
+        ನಿಮ್ಮ ಹರಕೆಯೇ ಈ ಮಧುರ ಕ್ಷಣದ ನಿರಂತರ ಚೈತನ್ಯ.
       </p>
 
       <p class="close-prose" lang="en">
         &#8220;In the warm coastal embrace of Udupi,
         where temple bells ring with the rhythm of the sea,
         Sumanth and Vindhya take their very first step together.
-        Your blessings make this moment eternal.&#8221;
+        With your blessings and presence, this moment becomes eternal.&#8221;
       </p>
 
       <div class="h-rule h-rule-close"><span class="h-rule-gem">❦</span></div>
@@ -278,7 +291,7 @@
       </div>
     </button>
 
-  </div><!-- /#book -->
+  </main><!-- /#book -->
 
   <!-- Bottom nav — 5 dots -->
   <nav id="nav" aria-label="Page navigation">
@@ -311,7 +324,21 @@
     </svg>
   </button>
 
+  <button id="sound-pin" aria-label="Toggle ambient sound" aria-pressed="false" title="Sound">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polygon points="3,6 3,18 10,15 10,9"/>
+      <path d="M 14 9 Q 16 9 16 12 Q 16 15 14 15" fill="none"/>
+      <path d="M 17 6 Q 20 9 20 12 Q 20 15 17 18" fill="none"/>
+    </svg>
+  </button>
+
 </div><!-- /#stage -->
-<script src="app.js" defer></script>
+<noscript>
+  <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+    <p>This invitation requires JavaScript to function.</p>
+    <p>Please enable JavaScript in your browser settings.</p>
+  </div>
+</noscript>
+<script type="module" src="app.js"></script>
 </body>
 </html>
