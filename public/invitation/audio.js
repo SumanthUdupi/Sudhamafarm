@@ -34,17 +34,23 @@ export function initAudio(reducedMotion) {
   }
 
   // Trigger ambient on first user interaction (fallback for autoplay policy)
-  document.addEventListener('click', startAmbienceOnce, { once: true, passive: true });
-  document.addEventListener('touchstart', startAmbienceOnce, { once: true, passive: true });
-  document.addEventListener('keydown', startAmbienceOnce, { once: true, passive: true });
-}
-
-function startAmbienceOnce() {
-  if (!userInteracted && !ambienceStarted && ambienceAudio) {
-    userInteracted = true;
-    startAmbience();
-    ambienceStarted = true;
+  function onFirstInteraction() {
+    if (!userInteracted) {
+      userInteracted = true;
+      // Wait a tiny bit to ensure audio is ready
+      setTimeout(() => {
+        if (ambienceAudio && !ambienceStarted) {
+          startAmbience();
+          ambienceStarted = true;
+        }
+      }, 50);
+    }
   }
+
+  // Listen on window capture phase to ensure we catch the first interaction
+  window.addEventListener('click', onFirstInteraction, true);
+  window.addEventListener('touchstart', onFirstInteraction, true);
+  window.addEventListener('keydown', onFirstInteraction, true);
 }
 
 function loadAudioFile(src, callback) {
