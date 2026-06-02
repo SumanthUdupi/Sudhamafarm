@@ -25,24 +25,11 @@ export function initAudio(reducedMotion) {
       ambienceAudio = audio;
       ambienceAudio.loop = true;
       ambienceAudio.volume = 0.35;
-    });
-  }
-
-  // Start ambient on first user interaction (click, touch, key press)
-  const startAmbientOnInteraction = () => {
-    if (!ambienceStarted && soundEnabled && ambienceAudio && !prefersReducedMotion) {
+      // START AMBIENT IMMEDIATELY WHEN LOADED
       startAmbience();
       ambienceStarted = true;
-      // Remove listeners after first interaction
-      document.removeEventListener('click', startAmbientOnInteraction);
-      document.removeEventListener('touchstart', startAmbientOnInteraction);
-      document.removeEventListener('keydown', startAmbientOnInteraction);
-    }
-  };
-
-  document.addEventListener('click', startAmbientOnInteraction, { passive: true });
-  document.addEventListener('touchstart', startAmbientOnInteraction, { passive: true });
-  document.addEventListener('keydown', startAmbientOnInteraction, { passive: true });
+    });
+  }
 }
 
 function loadAudioFile(src, callback) {
