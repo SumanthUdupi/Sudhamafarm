@@ -106,27 +106,21 @@ class PageFlip {
     book.addEventListener('touchstart', (e) => {
       touchSX = e.touches[0].clientX;
       touchSY = e.touches[0].clientY;
+      navigator.vibrate(0);
     }, { passive: true });
 
     book.addEventListener('touchend', (e) => {
       const dx = e.changedTouches[0].clientX - touchSX;
       const dy = e.changedTouches[0].clientY - touchSY;
       if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 38) {
-        // Conditional vibration based on current page and swipe direction
-        if (this.current === 0) { // Page 1: vibrate only on right-to-left swipe
-          if (dx < 0) {
-            navigator.vibrate(40);
-            this.goNext();
-          }
-        } else if (this.current === 4) { // Page 5: vibrate only on left-to-right swipe
-          if (dx > 0) {
-            navigator.vibrate(40);
-            this.goPrev();
-          }
-        } else { // Other pages: vibrate on any swipe
-          navigator.vibrate(40);
-          if (dx < 0) this.goNext(); else this.goPrev();
-        }
+        const isLeftSwipe = dx < 0;
+        const shouldVibrate =
+          (this.current === 0 && isLeftSwipe) ||      // Page 1: right-to-left only
+          (this.current === 4 && !isLeftSwipe) ||      // Page 5: left-to-right only
+          (this.current > 0 && this.current < 4);      // Other pages: any direction
+
+        if (shouldVibrate) navigator.vibrate(40);
+        isLeftSwipe ? this.goNext() : this.goPrev();
       }
     }, { passive: true });
   }
