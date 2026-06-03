@@ -16,7 +16,9 @@ import { PageFlip } from './pageFlip.js';
 
   const book = document.getElementById('book');
   const openBtn = document.getElementById('open-folio');
+  const swipePrompt = document.getElementById('swipe-prompt');
   let prevPage = 0;
+  let hasSeenSwipePrompt = false;
 
   /* Initialize page flip controller */
   const flipper = new PageFlip({
@@ -24,6 +26,11 @@ import { PageFlip } from './pageFlip.js';
     totalPages: PAGES.TOTAL,
     onPageChange: (idx) => {
       prevPage = idx;
+      // Hide swipe prompt when user leaves page 0
+      if (idx !== 0 && swipePrompt && swipePrompt.classList.contains('show')) {
+        swipePrompt.classList.remove('show');
+        swipePrompt.classList.add('hide');
+      }
     }
   });
 
@@ -53,6 +60,16 @@ import { PageFlip } from './pageFlip.js';
       }
       requestAnimationFrame(lerpTilt);
     }());
+  }
+
+  /* ── Swipe prompt on first load (mobile only) ────────────────── */
+  if (swipePrompt && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    setTimeout(() => {
+      if (!hasSeenSwipePrompt && flipper.current === 0) {
+        swipePrompt.classList.add('show');
+        hasSeenSwipePrompt = true;
+      }
+    }, 1200);
   }
 
   /* ── Ambient motes ─────────────────────────────────────── */

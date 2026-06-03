@@ -6,6 +6,7 @@ const NAV = [
   { label: 'Our Farm', href: '/#farm' },
   { label: 'Our Cows', href: '/#cows' },
   { label: 'Our Story', href: '/#story' },
+  { label: 'Location', href: '/#location' },
   { label: 'Sacred Journeys', href: '/blog' },
 ]
 

@@ -6,12 +6,14 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { useUIStore } from '@/store/uiStore'
+import DarkModeToggle from '@/components/ui/DarkModeToggle'
 
 const NAV = [
   { label: 'The Farmhouse', href: '/#farmhouse' },
   { label: 'Our Farm',      href: '/#farm' },
   { label: 'Our Cows',      href: '/#cows' },
   { label: 'Our Story',     href: '/#story' },
+  { label: 'Location',      href: '/#location' },
   { label: 'Sacred Journeys', href: '/blog' },
 ]
 
@@ -85,24 +87,27 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            type="button"
-            className="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1.5"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={mobileMenuOpen ? 'true' : 'false'}
-          >
-            <span className={`block h-px w-full transition-all duration-300 ${
-              mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''
-            } ${!scrolled && isHome ? 'bg-white' : 'bg-stone-700'}`} />
-            <span className={`block h-px w-full transition-all duration-300 ${
-              mobileMenuOpen ? 'opacity-0' : ''
-            } ${!scrolled && isHome ? 'bg-white' : 'bg-stone-700'}`} />
-            <span className={`block h-px w-full transition-all duration-300 ${
-              mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''
-            } ${!scrolled && isHome ? 'bg-white' : 'bg-stone-700'}`} />
-          </button>
+          {/* Dark mode toggle + Mobile hamburger */}
+          <div className="flex items-center gap-2">
+            <DarkModeToggle />
+            <button
+              type="button"
+              className="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1.5"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen ? 'true' : 'false'}
+            >
+              <span className={`block h-px w-full transition-all duration-300 ${
+                mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''
+              } ${!scrolled && isHome ? 'bg-white' : 'bg-stone-700'}`} />
+              <span className={`block h-px w-full transition-all duration-300 ${
+                mobileMenuOpen ? 'opacity-0' : ''
+              } ${!scrolled && isHome ? 'bg-white' : 'bg-stone-700'}`} />
+              <span className={`block h-px w-full transition-all duration-300 ${
+                mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''
+              } ${!scrolled && isHome ? 'bg-white' : 'bg-stone-700'}`} />
+            </button>
+          </div>
         </div>
       </header>
 

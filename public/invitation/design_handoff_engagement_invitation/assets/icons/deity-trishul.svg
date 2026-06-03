@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Trishul — Lord Shiva">
-  <line x1="24" y1="8" x2="24" y2="42" stroke="#800020" stroke-width="2.4"></line>
-  <path d="M24 16 Q14 11 12 7 Q14 13 24 18Z" fill="#800020"></path>
-  <path d="M24 16 Q34 11 36 7 Q34 13 24 18Z" fill="#800020"></path>
-  <line x1="15" y1="27" x2="33" y2="27" stroke="#800020" stroke-width="2.2"></line>
-  <line x1="15" y1="30" x2="33" y2="30" stroke="#800020" stroke-width="1" opacity=".5"></line>
-  <ellipse cx="24" cy="38" rx="5" ry="2" stroke="#D4AF37" stroke-width="1.4" fill="none"></ellipse>
-  <circle cx="24" cy="38" r="1.4" fill="#D4AF37" opacity=".7"></circle>
-</svg>

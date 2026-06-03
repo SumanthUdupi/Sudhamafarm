@@ -1,19 +1,38 @@
 'use client'
 
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const HERD = [
-  { name: 'Gauri',   src: '/images/Gauri.jpg',   desc: 'Rescued 2021 — gentle matriarch of the goshala.' },
-  { name: 'Krishna', src: '/images/Krishna.jpg',  desc: 'Playful spirit. Loves morning porridge and open sky.' },
+  { name: 'Gauri', src: '/images/Gauri.jpg', desc: 'Rescued 2021 — gentle matriarch of the goshala.', alt: 'Gauri, the gentle matriarch of the SuDhama goshala, a desi cow rescued in 2021 who roams freely on open pasture.' },
+  { name: 'Krishna', src: '/images/Krishna.jpg', desc: 'Playful spirit. Loves morning porridge and open sky.', alt: 'Krishna at SuDhama — a playful desi cow who loves morning porridge, open sky, and the company of the herd.' },
+  { name: 'The Goshala', src: '/images/Cow.jpg', desc: 'Our sanctuary — two rescued desi cows roaming freely on open pasture.', alt: 'The SuDhama goshala — a sanctuary where rescued desi cows roam freely on open pasture without separation from their calves.' },
 ]
 
 export default function CowsSection() {
   const ref = useRef(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const [current, setCurrent] = useState(0)
   const [dairyOpen, setDairyOpen] = useState(false)
+
+  const startAutoAdvance = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % HERD.length)
+    }, 5000)
+  }
+
+  const stopAutoAdvance = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+  }
+
+  useEffect(() => {
+    startAutoAdvance()
+    return () => stopAutoAdvance()
+  }, [])
 
   return (
     <section id="cows" ref={ref} className="py-20 md:py-28 bg-[#FDFBF7] border-t border-stone-100">
@@ -22,11 +41,16 @@ export default function CowsSection() {
 
           {/* Carousel */}
           <motion.div
+            ref={carouselRef}
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            onMouseEnter={stopAutoAdvance}
+            onMouseLeave={startAutoAdvance}
+            onFocus={stopAutoAdvance}
+            onBlur={startAutoAdvance}
           >
-            <div className="relative rounded-xl overflow-hidden bg-stone-100">
+            <figure className="relative rounded-xl overflow-hidden bg-stone-100">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
@@ -38,34 +62,47 @@ export default function CowsSection() {
                 >
                   <Image
                     src={HERD[current].src}
-                    alt={HERD[current].name}
+                    alt={HERD[current].alt}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ boxShadow: '0 0 24px rgba(212,165,116,0.3)' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <figcaption className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="font-playfair text-white text-xl">{HERD[current].name}</p>
                     <p className="font-inter text-white/65 text-xs mt-0.5">{HERD[current].desc}</p>
-                  </div>
+                  </figcaption>
                 </motion.div>
               </AnimatePresence>
               <button type="button" aria-label="Previous cow"
-                onClick={() => setCurrent((c) => (c - 1 + HERD.length) % HERD.length)}
-                className="absolute top-1/2 left-3 -translate-y-1/2 w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 text-white backdrop-blur-sm flex items-center justify-center transition-colors">
+                onClick={() => {
+                  stopAutoAdvance()
+                  setCurrent((c) => (c - 1 + HERD.length) % HERD.length)
+                  startAutoAdvance()
+                }}
+                className="absolute top-1/2 left-3 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white backdrop-blur-sm flex items-center justify-center transition-colors">
                 ‹
               </button>
               <button type="button" aria-label="Next cow"
-                onClick={() => setCurrent((c) => (c + 1) % HERD.length)}
-                className="absolute top-1/2 right-3 -translate-y-1/2 w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 text-white backdrop-blur-sm flex items-center justify-center transition-colors">
+                onClick={() => {
+                  stopAutoAdvance()
+                  setCurrent((c) => (c + 1) % HERD.length)
+                  startAutoAdvance()
+                }}
+                className="absolute top-1/2 right-3 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white backdrop-blur-sm flex items-center justify-center transition-colors">
                 ›
               </button>
-            </div>
+            </figure>
             <div className="flex justify-center gap-2 mt-3">
               {HERD.map((cow, i) => (
                 <button key={cow.name} type="button" aria-label={`Go to ${cow.name}`}
-                  onClick={() => setCurrent(i)}
-                  className={`transition-all duration-300 rounded-full ${i === current ? 'w-5 h-1.5 bg-terracotta' : 'w-1.5 h-1.5 bg-stone-300'}`}
+                  onClick={() => {
+                    stopAutoAdvance()
+                    setCurrent(i)
+                    startAutoAdvance()
+                  }}
+                  className={`transition-all duration-300 rounded-full min-h-[44px] min-w-[44px] flex items-center justify-center ${i === current ? 'w-5 h-1.5 bg-terracotta' : 'w-1.5 h-1.5 bg-stone-300'}`}
                 />
               ))}
             </div>
@@ -125,11 +162,24 @@ export default function CowsSection() {
               <button type="button" onClick={() => setDairyOpen(false)} aria-label="Close"
                 className="absolute top-4 right-5 text-stone-400 hover:text-stone-700 text-xl transition-colors">×</button>
               <span className="font-inter label-eyebrow">Coming Soon</span>
-              <h3 className="font-playfair text-2xl text-stone-900 mb-3">The SuDhama Dairy</h3>
-              <p className="font-inter text-stone-500 text-sm leading-relaxed">
-                A small, ethical dairy — pure A2 milk from happy cows living
-                exactly as nature intended. Small batches. No shortcuts.
+              <h3 className="font-playfair text-2xl text-stone-900 mb-4">The SuDhama Dairy</h3>
+              <p className="font-inter text-stone-500 text-sm leading-relaxed mb-4">
+                A small, ethical dairy — pure A2 milk from happy cows living exactly as nature intended. Small batches. No shortcuts.
               </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: 'When', value: 'Q4 2027', detail: 'Building infrastructure carefully.' },
+                  { label: 'Why', value: 'Care-driven', detail: 'To share the wellness we give our herd.' },
+                  { label: 'How', value: 'Small-batch A2', detail: 'Cold pasteurised. No additives.' },
+                  { label: 'Distribution', value: 'Local — Udupi', detail: 'Direct from our dairy to your table.' },
+                ].map(p => (
+                  <div key={p.label} className="bg-stone-50 rounded-lg p-3">
+                    <p className="font-inter text-[0.55rem] uppercase tracking-widest text-stone-400 font-medium">{p.label}</p>
+                    <p className="font-playfair text-stone-800 text-xs font-semibold mt-1">{p.value}</p>
+                    <p className="font-inter text-stone-500 text-[0.65rem] mt-0.5 leading-tight">{p.detail}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         )}

@@ -51,15 +51,18 @@ export default function FarmhouseSection() {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-2 gap-3"
           >
-            <div className="relative col-span-2 h-60 rounded-xl overflow-hidden">
-              <Image src="/images/Farmhouse.jpg" alt="SuDhama farmhouse" fill className="object-cover" sizes="50vw" />
-            </div>
-            <div className="relative h-36 rounded-xl overflow-hidden">
-              <Image src="/images/Farmhouse V1.jpg" alt="Front view" fill className="object-cover" sizes="25vw" />
-            </div>
-            <div className="relative h-36 rounded-xl overflow-hidden">
-              <Image src="/images/latHome.jpg" alt="Laterite stone detail" fill className="object-cover" sizes="25vw" />
-            </div>
+            <figure className="relative col-span-2 h-60 rounded-xl overflow-hidden">
+              <Image src="/images/Farmhouse.jpg" alt="The SuDhama farmhouse, built with traditional laterite stone and sheltered by coconut palms on the family estate." fill className="object-cover" sizes="50vw" />
+              <figcaption className="sr-only">The SuDhama farmhouse exterior</figcaption>
+            </figure>
+            <figure className="relative h-36 rounded-xl overflow-hidden">
+              <Image src="/images/Farmhouse V1.jpg" alt="An earlier view of the SuDhama farmhouse — the laterite stone walls and verandah taking form." fill className="object-cover" sizes="25vw" />
+              <figcaption className="sr-only">Farmhouse under construction</figcaption>
+            </figure>
+            <figure className="relative h-36 rounded-xl overflow-hidden">
+              <Image src="/images/latHome.jpg" alt="Close detail of the SuDhama farmhouse — local laterite stone that stays cool in summer and warm through the monsoon." fill className="object-cover" sizes="25vw" />
+              <figcaption className="sr-only">Laterite stone detail</figcaption>
+            </figure>
           </motion.div>
 
         </div>

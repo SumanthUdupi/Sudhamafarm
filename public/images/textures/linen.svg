@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="linen-weave" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="10" y2="10" stroke="#aaa" stroke-width="0.5" />
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#linen-weave)" />
+</svg>

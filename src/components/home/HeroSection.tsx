@@ -14,14 +14,14 @@ export default function HeroSection() {
   return (
     <section ref={ref} id="home" className="relative h-screen min-h-[600px] overflow-hidden">
 
-      {/* Image — Next/Image fill, never tiles, no background-image CSS */}
+      {/* Image — Next/Image fill with ken-burns animation */}
       <motion.div style={{ y }} className="absolute inset-0 will-change-transform">
         <Image
           src="/images/Farm.jpg"
-          alt="SuDhama farm, aerial view"
+          alt="SuDhama farm in Kanyana Village, Udupi — a 3-acre organic sanctuary of coconut palms, open pasture, and 30-year-old fruit trees."
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center animate-ken-burns"
           sizes="100vw"
         />
       </motion.div>

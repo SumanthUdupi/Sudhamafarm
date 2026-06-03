@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <pattern id="crosshatch" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="6" y2="6" stroke="#bbb" stroke-width="0.5" />
+      <line x1="6" y1="0" x2="0" y2="6" stroke="#bbb" stroke-width="0.5" />
+    </pattern>
+  </defs>
+  <rect width="200" height="200" fill="url(#crosshatch)" />
+</svg>

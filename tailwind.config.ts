@@ -17,6 +17,10 @@ const config: Config = {
         'deep-ochre': '#CC7722',
         'temple-black': '#0A0A0A',
         'sacred-gold': '#D4AF37',
+        // Extended palette
+        'burnt-orange': '#A0522D',
+        'deep-gold': '#D4A574',
+        'deep-sage': '#556B5D',
         // Neutral
         'ink': '#1A1A1A',
       },
@@ -30,6 +34,7 @@ const config: Config = {
         'slow-zoom': 'slowZoom 20s infinite alternate ease-in-out',
         'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'shimmer': 'shimmer 2s linear infinite',
+        'ken-burns': 'kenBurns 30s ease-in-out infinite alternate',
       },
       keyframes: {
         slowZoom: {
@@ -43,6 +48,10 @@ const config: Config = {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        kenBurns: {
+          from: { backgroundPosition: '0% 0%', backgroundSize: '120% auto' },
+          to: { backgroundPosition: '20% 20%', backgroundSize: '110% auto' },
         },
       },
       backgroundImage: {

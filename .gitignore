@@ -1,1 +1,14 @@
 node_modules
+.next
+.open-next
+dist
+build
+*.log
+.env
+.env.local
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.idea

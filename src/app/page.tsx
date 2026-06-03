@@ -5,6 +5,9 @@ import FarmProductsSection from '@/components/home/FarmProductsSection'
 import CowsSection from '@/components/home/CowsSection'
 import StorySection from '@/components/home/StorySection'
 import LocationSection from '@/components/home/LocationSection'
+import FaqSection from '@/components/home/FaqSection'
+
+export const revalidate = 0 // Always fresh in dev; use ISR in production via deployment config
 
 export default function HomePage() {
   return (
@@ -16,6 +19,7 @@ export default function HomePage() {
       <CowsSection />
       <StorySection />
       <LocationSection />
+      <FaqSection />
     </>
   )
 }

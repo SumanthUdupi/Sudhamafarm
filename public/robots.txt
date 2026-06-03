@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /command
+Sitemap: https://sudhamafarms.com/sitemap.xml

@@ -285,7 +285,8 @@ html, body {
 .p-muhu.is-active .muhu-big         { animation: scalePop    .72s var(--ease-rise) .13s both; }
 .p-muhu.is-active .muhu-month       { animation: contentRise .48s var(--ease-rise) .28s both; }
 .p-muhu.is-active .muhu-year        { animation: contentRise .44s var(--ease-rise) .34s both; }
-.p-muhu.is-active .h-rule           { animation: contentRise .44s var(--ease-rise) .41s both; }
+.p-muhu.is-active .muhu-time        { animation: contentRise .44s var(--ease-rise) .37s both; }
+.p-muhu.is-active .h-rule           { animation: contentRise .44s var(--ease-rise) .42s both; }
 .p-muhu.is-active .muhu-venue       { animation: contentRise .48s var(--ease-rise) .47s both; }
 .p-muhu.is-active .muhu-pills       { animation: contentRise .48s var(--ease-rise) .56s both; }
 
@@ -508,6 +509,18 @@ html, body {
   font-size: clamp(.62rem, 1.5vw, .8rem);
   color: var(--ink-lt); letter-spacing: .2em; margin-top: .08rem;
 }
+.muhu-time {
+  font-family: var(--ff-b); font-weight: 600;
+  font-size: clamp(.75rem, 2vw, 1rem);
+  color: var(--burg); letter-spacing: .06em; margin-top: .24rem;
+  opacity: 0;
+}
+.p-muhu .muhu-time {
+  opacity: 0;
+}
+.p-muhu.is-active .muhu-time {
+  opacity: 1;
+}
 .muhu-venue {
   font-family: var(--ff-d); font-style: italic;
   font-size: clamp(.72rem, 1.8vw, .9rem);
@@ -566,6 +579,11 @@ html, body {
   font-size: clamp(.62rem, 1.5vw, .78rem);
   color: var(--ink-md); line-height: 1.55;
   margin-top: .25rem; margin-bottom: clamp(.35rem, .9vh, .6rem);
+}
+.venue-time {
+  font-family: var(--ff-b); font-weight: 600;
+  font-size: clamp(.7rem, 1.8vw, .85rem);
+  color: var(--burg); margin-top: .18rem;
 }
 .map-shell {
   flex: 1; min-height: 0; width: 100%;
@@ -663,6 +681,71 @@ html, body {
 .tap-zone:hover .tap-hint { opacity: .7; }
 .tap-hint svg { width: 16px; height: 16px; stroke: var(--burg); stroke-width: 1.5; fill: none; }
 
+/* Hide tap-zones on mobile (use swipe only) */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  .tap-zone {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    z-index: -999 !important;
+    position: fixed !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SWIPE NAVIGATION PROMPT (Mobile only)
+══════════════════════════════════════════════════════════ */
+.swipe-prompt {
+  position: fixed; bottom: 3rem; right: 1.5rem; z-index: 20;
+  display: none; flex-direction: column; align-items: center; gap: 0.5rem;
+  padding: 1rem; border-radius: 8px;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  opacity: 0; transition: opacity .4s ease;
+}
+.swipe-prompt.show {
+  display: flex;
+  animation: fadeInSlide 0.6s ease-out 0.5s forwards;
+}
+.swipe-prompt.hide {
+  animation: fadeOutSlide 0.4s ease-out forwards;
+}
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOutSlide {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(12px); }
+}
+.swipe-arrow {
+  width: 20px; height: 20px; stroke: var(--burg); stroke-width: 2;
+  fill: none; stroke-linecap: round; stroke-linejoin: round;
+  animation: swipeArrowBounce 1.6s ease-in-out infinite;
+}
+@keyframes swipeArrowBounce {
+  0%, 100% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(6px); opacity: 1; }
+}
+.swipe-text {
+  font-size: 0.75rem; font-weight: 500; color: var(--burg);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Show swipe prompt only on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .swipe-prompt { position: fixed; }
+}
+/* Hide on larger screens */
+@media (hover: hover) and (pointer: fine) {
+  .swipe-prompt { display: none !important; }
+}
 
 /* ══════════════════════════════════════════════════════════
    BOTTOM NAVIGATION
@@ -760,7 +843,7 @@ html, body {
   .page .lbl, .page .sec-title, .page .sec-title-kn, .page .h-rule,
   .page .cover-om, .page .cover-names-col, .page .cover-sub, .page .cover-badge,
   .page .open-btn, .page .wel-kn, .page .wel-en, .page .fams,
-  .page .muhu-kn, .page .muhu-big, .page .muhu-month, .page .muhu-year,
+  .page .muhu-kn, .page .muhu-big, .page .muhu-month, .page .muhu-year, .page .muhu-time,
   .page .muhu-venue, .page .muhu-pills, .page .venue-hd, .page .map-shell,
   .page .venue-cta, .page .close-kula-row, .page .close-title, .page .close-quote,
   .page .close-prose, .page .close-names {

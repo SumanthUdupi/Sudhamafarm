@@ -11,7 +11,7 @@ export default function LocationSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="location" ref={ref} className="py-20 md:py-28 border-t border-stone-100">
+    <section id="location" ref={ref} aria-label="Contact and Directions" className="py-20 md:py-28 border-t border-stone-100">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
 
@@ -49,6 +49,17 @@ export default function LocationSection() {
               </div>
             </div>
 
+            <div className="flex items-start gap-3">
+              <span className="text-base mt-0.5">📞</span>
+              <div>
+                <p className="font-inter text-[0.6rem] uppercase tracking-widest text-stone-400 font-medium">Phone</p>
+                <a href="tel:+910000000000"
+                  className="font-inter text-stone-700 text-sm hover:text-terracotta transition-colors">
+                  +91-XXXXX-XXXXX
+                </a>
+              </div>
+            </div>
+
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer"
               className="font-inter inline-flex items-center gap-2 text-sm px-5 py-2.5 bg-forest text-white rounded-full hover:bg-forest/90 transition-colors">
               Open in Google Maps
@@ -72,6 +83,9 @@ export default function LocationSection() {
               referrerPolicy="no-referrer-when-downgrade"
               className="border-0 block"
             />
+            <p className="font-inter text-[0.65rem] text-stone-400 pt-2 text-center">
+              ~30 min from Udupi · ~2 hrs from Mangalore
+            </p>
           </motion.div>
 
         </div>
