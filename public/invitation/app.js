@@ -74,14 +74,4 @@ import { PageFlip } from './pageFlip.js';
     stage.appendChild(m);
   }
 
-  /* ── Grid easter-egg ──────────────────────────────────── */
-  const pin = document.getElementById('grid-pin');
-  if (pin) {
-    pin.addEventListener('click', function () {
-      const on = document.body.classList.toggle('grid-on');
-      pin.classList.toggle('on', on);
-      pin.setAttribute('aria-pressed', String(on));
-    });
-  }
-
 }());

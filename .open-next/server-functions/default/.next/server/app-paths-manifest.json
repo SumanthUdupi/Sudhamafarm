@@ -1,0 +1,11 @@
+{
+  "/api/schedule/route": "app/api/schedule/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/invitation/route": "app/invitation/route.js",
+  "/invite/route": "app/invite/route.js",
+  "/api/articles/route": "app/api/articles/route.js",
+  "/page": "app/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/command/page": "app/command/page.js"
+}
