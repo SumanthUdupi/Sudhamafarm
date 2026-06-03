@@ -112,7 +112,21 @@ class PageFlip {
       const dx = e.changedTouches[0].clientX - touchSX;
       const dy = e.changedTouches[0].clientY - touchSY;
       if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 38) {
-        if (dx < 0) this.goNext(); else this.goPrev();
+        // Conditional vibration based on current page and swipe direction
+        if (this.current === 0) { // Page 1: vibrate only on right-to-left swipe
+          if (dx < 0) {
+            navigator.vibrate(40);
+            this.goNext();
+          }
+        } else if (this.current === 4) { // Page 5: vibrate only on left-to-right swipe
+          if (dx > 0) {
+            navigator.vibrate(40);
+            this.goPrev();
+          }
+        } else { // Other pages: vibrate on any swipe
+          navigator.vibrate(40);
+          if (dx < 0) this.goNext(); else this.goPrev();
+        }
       }
     }, { passive: true });
   }

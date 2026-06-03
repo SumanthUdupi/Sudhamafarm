@@ -4,7 +4,6 @@
 
 import { PAGES } from './config.js';
 import { PageFlip } from './pageFlip.js';
-import { initAudio, playFlip, playOpen, toggleAmbience, isSoundEnabled } from './audio.js';
 
 (function () {
   'use strict';
@@ -15,9 +14,6 @@ import { initAudio, playFlip, playOpen, toggleAmbience, isSoundEnabled } from '.
     document.documentElement.classList.add('no-animation');
   }
 
-  /* Initialize audio feedback */
-  initAudio(prefersReducedMotion);
-
   const book = document.getElementById('book');
   const openBtn = document.getElementById('open-folio');
   let prevPage = 0;
@@ -27,7 +23,6 @@ import { initAudio, playFlip, playOpen, toggleAmbience, isSoundEnabled } from '.
     container: book,
     totalPages: PAGES.TOTAL,
     onPageChange: (idx) => {
-      playFlip(idx > prevPage ? +1 : -1);
       prevPage = idx;
     }
   });
@@ -35,21 +30,7 @@ import { initAudio, playFlip, playOpen, toggleAmbience, isSoundEnabled } from '.
   /* Open invitation from cover */
   if (openBtn) {
     openBtn.addEventListener('click', function () {
-      playOpen();
       flipper.goTo(1, +1);
-    });
-  }
-
-  /* Sound toggle button */
-  const soundPin = document.getElementById('sound-pin');
-  if (soundPin) {
-    const enabled = isSoundEnabled();
-    soundPin.setAttribute('aria-pressed', String(enabled));
-    soundPin.classList.toggle('on', enabled);
-    soundPin.addEventListener('click', function () {
-      const enabled = toggleAmbience();
-      soundPin.classList.toggle('on', enabled);
-      soundPin.setAttribute('aria-pressed', String(enabled));
     });
   }
 
