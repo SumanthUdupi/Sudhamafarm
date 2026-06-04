@@ -157,6 +157,7 @@
       justify-content: center;
       text-align: center;
       height: 100%;
+      overflow: hidden;
     }
 
     /* ════ DECORATIVE PAGE BORDERS ════ */
@@ -437,9 +438,9 @@
 
     .prose-inner {
       width: 100%;
-      overflow: visible;
-      padding: 1.2rem;
-      max-height: none;
+      overflow: hidden;
+      padding: 1rem;
+      max-height: calc(100vh - clamp(4rem, 8vw, 6rem));
       border: 1.5px solid var(--color-accent-brass);
       border-radius: 16px;
       background: rgba(58, 12, 13, 0.5);
@@ -494,26 +495,26 @@
 
     .prose-kn {
       font-family: var(--ff-kannada);
-      font-size: calc(var(--fs-kannada) * 0.98);
-      line-height: 1.9;
-      margin: 0 0 1rem 0;
+      font-size: calc(var(--fs-kannada) * 0.95);
+      line-height: 1.8;
+      margin: 0 0 0.7rem 0;
       color: var(--color-primary-yellow);
     }
 
     .prose-en {
       font-family: var(--ff-display);
       font-style: italic;
-      font-size: calc(var(--fs-body) * 1.18);
+      font-size: calc(var(--fs-body) * 1.12);
       font-weight: 500;
-      line-height: 1.65;
+      line-height: 1.55;
       letter-spacing: 0.005em;
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.7rem 0;
       color: var(--color-cream);
     }
 
     .prose-divider {
-      font-size: 1rem;
-      margin: 0.8rem 0;
+      font-size: 0.9rem;
+      margin: 0.4rem 0;
       opacity: 0.5;
       color: var(--color-accent-brass);
     }
@@ -845,21 +846,6 @@
             We cordially invite you to grace the auspicious occasion of our children's Engagement.
           </p>
 
-          <div class="prose-divider">❦</div>
-
-          <div class="families-row">
-            <div class="family-block">
-              <span class="family-tag">Groom</span>
-              <span class="family-name">Udupi</span>
-              <span class="family-kn" lang="kn">ಉಡುಪಿ</span>
-            </div>
-            <span class="family-sep" aria-hidden="true">❦</span>
-            <div class="family-block">
-              <span class="family-tag">Bride</span>
-              <span class="family-name">Vadeyaramata</span>
-              <span class="family-kn" lang="kn">ಒಡೆಯರ ಮಠ</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
